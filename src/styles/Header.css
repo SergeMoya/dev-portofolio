@@ -1,0 +1,76 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(to right, #243B55, #141E30);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden; /* Needed to contain the pseudo-element within the header */
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    height: 2px;
+    background: #FFFFFF; /* White underline */
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.header:hover::after {
+    left: 0;
+    right: 0; /* Expands the underline across the full width on hover */
+}
+
+
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-left: 20px;
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #1565C0;  /* A lighter blue for active/hover states */
+    border-radius: 5px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Stack nav items under each other */
+    }
+    .navbar a {
+        display: block;
+        text-align: center;
+        width: 100%; /* Full width */
+        margin: 10px 0;
+    }
+}
+
+.navbar .active {
+    color: gray; /* Example: makes the text color red when active */
+    font-weight: bold;
+}
+

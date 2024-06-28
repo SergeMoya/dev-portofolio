@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  /*background-image: url('./images/background-portofolio.png'); */
+  background: linear-gradient(to right, #243B55, #141E30);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -36,3 +42,5 @@
     transform: rotate(360deg);
   }
 }
+
+
