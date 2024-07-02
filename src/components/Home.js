@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import profilePic from '../images/acare_profile.png';
 import '../styles/Home.css';
 
 const Home = () => {
-  const navigate = useNavigate();
   const [lightPosition, setLightPosition] = useState({ x: 0, y: 0 });
   const [text, setText] = useState('');
   const [subtext, setSubtext] = useState('');
   const [h1Complete, setH1Complete] = useState(false); // State to check if h1 is completed
   const [showParagraph, setShowParagraph] = useState(false); // State to control the visibility of the paragraph
-
   const fullText = "Hello!";
   const fullSubtext = "This is Acare Technology";
 
@@ -31,7 +28,10 @@ const Home = () => {
   }, [subtext, h1Complete]); // Depend on h1 completion state
 
   const goToProjects = () => {
-    navigate('/projects');
+    const element = document.getElementById('skills');
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const handleMouseMove = (e) => {

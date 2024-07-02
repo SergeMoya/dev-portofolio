@@ -29,12 +29,11 @@
     right: 0; /* Expands the underline across the full width on hover */
 }
 
-
-
 .logo {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
     color: #FFFFFF;
+    cursor: pointer; /* Indicates the logo is clickable */
 }
 
 .navbar {
@@ -42,17 +41,20 @@
     list-style: none;
 }
 
-.navbar a {
+.navbar button {
+    background: none;
+    border: none;
     text-decoration: none;
     color: #FFFFFF;
     margin-left: 20px;
     padding: 10px 15px;
     font-family: 'Roboto', sans-serif;
     transition: color 0.3s, background-color 0.3s;
+    cursor: pointer; /* Indicates the buttons are clickable */
 }
 
-.navbar a:hover, .navbar a.active {
-    background-color: #1565C0;  /* A lighter blue for active/hover states */
+.navbar button:hover, .navbar button.active {
+    background-color: #1565C0; /* A lighter blue for active/hover states */
     border-radius: 5px;
 }
 
@@ -61,7 +63,7 @@
     .navbar {
         flex-direction: column; /* Stack nav items under each other */
     }
-    .navbar a {
+    .navbar button {
         display: block;
         text-align: center;
         width: 100%; /* Full width */
@@ -70,7 +72,6 @@
 }
 
 .navbar .active {
-    color: gray; /* Example: makes the text color red when active */
+    color: blue; /* Example: makes the text color blue when active */
     font-weight: bold;
 }
-
