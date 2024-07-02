@@ -204,7 +204,7 @@
 }
 @-o-keyframes mouse-wheel {
 
-   0% { top: 1px; }
+  0% { top: 1px; }
   25% { top: 2px; }
   50% { top: 3px;}
   75% { top: 2px;}
@@ -259,8 +259,6 @@
   0%, 100% { border-right-color: white; }
   50% { border-right-color: transparent; }
 }
-
-
 
 .text-content p {
   opacity: 0;

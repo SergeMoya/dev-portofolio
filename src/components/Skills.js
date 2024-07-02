@@ -6,7 +6,7 @@ const Skills = () => {
     <div className="skills-section">
       <div className="skills-header">
         {/*<h1>Skills</h1>*/}
-        <h1>Acare technology</h1>
+        <h1>Acare Technology</h1>
       </div>
       <div className="skills-container">
         {/* Skill 1: JavaScript */}

@@ -1,21 +1,25 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
 import '../styles/Header.css';
 
 const Header = () => {
+    const [activeSection, setActiveSection] = useState('home');
+
+    const scrollTo = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveSection(id); // Update the active section state
+        }
+    };
+
     return (
         <header className="header">
-            {/*<h1 className="logo">Serge</h1>*/}
-            <h1 className="logo">Acare Technology Co ltd.,</h1>
-            {/* Uncomment and customize this if needed: <h1 className="logo">Your Name</h1> */}
+            <h1 className="logo" onClick={() => scrollTo('home')}>Acare Technology Co ltd.,</h1>
             <nav className="navbar">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
-                <NavLink to="/AcareOX" className={({ isActive }) => isActive ? 'active' : ''}>AcareOx</NavLink>
-                {/*<NavLink to="/AcareOX" className={({ isActive }) => isActive ? 'active' : ''}>AcareOx</NavLink>
-                {/*<NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>Projects</NavLink>
-                <NavLink to="/expereince" className={({ isActive }) => isActive ? 'active' : ''}>Experience</NavLink>*/}
-                <NavLink to="/production" className={({ isActive }) => isActive ? 'active' : ''}>Production</NavLink>
-                <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
+                <button onClick={() => scrollTo('home')} className={activeSection === 'home' ? 'active' : ''}>Home</button>
+                <button onClick={() => scrollTo('skills')} className={activeSection === 'skills' ? 'active' : ''}>AcareOx</button>
+                <button onClick={() => scrollTo('production')} className={activeSection === 'production' ? 'active' : ''}>Production</button>
+                <button onClick={() => scrollTo('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</button>
             </nav>
         </header>
     );
