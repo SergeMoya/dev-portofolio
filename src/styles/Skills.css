@@ -130,3 +130,66 @@ body {
         padding: 2rem 50px;
     }
 }
+
+.popup {
+    display: block;
+    position: absolute;
+    background-color: #1e1e1e; /* Dark background similar to VS Code */
+    color: #dcdcdc; /* Light gray text color typical for code */
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Adjust width as needed */
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    /*border: 1px solid #3c3c3c; /* Subtle border like VS Code */
+    line-height: 1.6;
+}
+
+.editor-window {
+    position: relative;
+    background-color: #000000; /* Editor frame, Black background for the code area */
+    padding: 20px;
+    border-radius: 4px;
+    padding-top: 45px; /* Increased padding-top to add space between circles and code */
+}
+
+.window-controls {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #3c3c3c; /* Gray background for the window control bar */
+    width: 90%;
+    height: 25px; /* Set the height of the control bar */
+    padding: 5px 10px; /* Padding around the controls for better spacing */
+    border-radius: 4px 4px 0 0; /* Rounded top corners */
+}
+
+.control {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin-right: 8px; /* Increased space between circles */
+}
+
+.control.close {
+    background-color: #ff5f56;
+}
+
+.control.minimize {
+    background-color: #ffbd2e;
+}
+
+.control.expand {
+    background-color: #27c93f;
+}
+
+.code-block {
+    margin-left: 20px; /* Indentation for the code block */
+}
