@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Skills.css'; 
 
 const Skills = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
   return (
     <div className="skills-section">
       <div className="skills-header">
@@ -12,8 +14,35 @@ const Skills = () => {
         {/* Skill 1: JavaScript */}
         <div className="skills-box">
           <div className="skills-title">
-            <div className="skills-img">
-              <img src="https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-512.png" alt="JavaScript Logo" className="skills-icons" />
+            <div className="skills-img"
+                 onMouseEnter={() => setShowPopup(true)}
+                 onMouseLeave={() => setShowPopup(false)}>
+              <img src="https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-512.png"
+                   alt="JavaScript Logo"
+                   className="skills-icons"/>
+              {showPopup && (
+                <div className="popup">
+                  <div className="editor-window">
+                    <div className="window-controls">
+                      <span className="control close"></span>
+                      <span className="control minimize"></span>
+                      <span className="control expand"></span>
+                    </div>
+                    <code>
+                      {/* Your existing code structure here */}
+                      <span style={{ color: '#dcdcdc' }}>
+                        <span style={{ color: '#ce9178' }}>const</span> <span style={{ color: '#9cdcfe' }}>developerInfo</span> = {'{'}
+                        <div className="code-block">
+                          <span style={{ color: '#dcdcdc' }}>keyProjects:</span> <span style={{ color: '#ce9178' }}>'Dashboard App',</span><br />
+                          <span style={{ color: '#dcdcdc' }}>techSkills:</span> <span style={{ color: '#ce9178' }}>'React, Node.js',</span><br />
+                          <span style={{ color: '#dcdcdc' }}>certifications:</span> <span style={{ color: '#ce9178' }}>'Advanced JavaScript Course',</span>
+                        </div>
+                        {'};'}
+                      </span>
+                    </code>
+                  </div>
+                </div>
+              )}
             </div>
             <h3>Javascript</h3>
           </div>
