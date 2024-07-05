@@ -61,19 +61,23 @@ body {
     position: relative;
 }
 
-.skills-title:after {
+/* Start
+.skills-title:after { /* Green bar below the header
     content: '';
     position: absolute;
     bottom: 0;
-    right: 50%; /* Corrected 'rigth' to 'right' */
+    right: 50%; 
     width: 20px;
     height: 4px;
     border-radius: 2px 0 0 2px;
     background-color: #2ecc71;
     transition: .5s;
 }
+header*/
 
-.skills-title:before {
+
+/*
+.skills-title:before { /* Green bar below each of the skills
     content: '';
     position: absolute;
     bottom: 0;
@@ -83,6 +87,7 @@ body {
     border-radius: 0 2px 2px 0;
     background-color: #2ecc71;
 }
+*/
 
 .skills-icons {
     width: 50px;
@@ -113,7 +118,7 @@ body {
 }
 
 .skills-title h3 {
-    color: #333;
+    color: white;
     margin-top: 0.5rem;
 }
 
@@ -137,13 +142,13 @@ body {
     background-color: #1e1e1e; /* Dark background similar to VS Code */
     color: #dcdcdc; /* Light gray text color typical for code */
     text-align: left;
-    padding: 10px;
+    /*padding: 10px;*/
     border-radius: 5px;
     font-family: 'Consolas', 'Courier New', monospace;
     font-size: 0.85rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     width: 300px; /* Adjust width as needed */
-    top: 120%;
+    top: 105%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -176,6 +181,7 @@ body {
     height: 12px;
     border-radius: 6px;
     margin-right: 8px; /* Increased space between circles */
+    margin-bottom: -6px;
 }
 
 .control.close {

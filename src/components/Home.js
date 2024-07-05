@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import profilePic from '../images/acare_profile.png';
+import backgroundImage from '../images/art1.jpg'; 
 import '../styles/Home.css';
 
 const Home = () => {
@@ -39,7 +40,16 @@ const Home = () => {
   };
 
   return (
+    /* Uncomment here and comment below <div > to inclue the backgraound image
     <div className="homepage" onMouseMove={handleMouseMove} style={{
+      background: `url(${backgroundImage}) center / cover no-repeat, 
+                   radial-gradient(circle at ${lightPosition.x}px ${lightPosition.y}px, rgba(249, 178, 163, 0.09), rgba(249, 178, 163, 0) 40%)`
+    }}>
+    */
+    <div className="homepage" onMouseMove={handleMouseMove} style={{
+      backgroundImage: `url(${backgroundImage})`, // Set the background image via inline style
+      backgroundSize: 'cover', // Cover the entire size of the container
+      backgroundPosition: 'center', // Center the background image
       background: `radial-gradient(circle at ${lightPosition.x}px ${lightPosition.y}px, rgba(249, 178, 163, 0.09), rgba(249, 178, 163, 0) 40%)`
     }}>
       <div className="content">

@@ -1,0 +1,40 @@
+.aboutMeContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Equal width columns */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+  background: blueviolet;
+  align-items: start; /* Aligns items at the start of each cell */
+}
+
+.aboutMeCard {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.aboutMePicture {
+  grid-row: 1 / 3; /* Span from the first to the third row */
+}
+
+.aboutMeText, .aboutMeContact {
+  width: 98%; /* Full width of the column */
+  height: 510px;
+}
+
+.aboutMePicture img {
+  width: 100%; /* Make the image fill the container */
+  height: auto;
+  border-radius: 8px;
+}
+
+.aboutMeContact button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
