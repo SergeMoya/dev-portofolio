@@ -18,7 +18,7 @@ const Header = () => {
             <nav className="navbar">
                 <button onClick={() => scrollTo('home')} className={activeSection === 'home' ? 'active' : ''}>Home</button>
                 <button onClick={() => scrollTo('skills')} className={activeSection === 'skills' ? 'active' : ''}>AcareOx</button>
-                <button onClick={() => scrollTo('production')} className={activeSection === 'production' ? 'active' : ''}>Production</button>
+                <button onClick={() => scrollTo('experience')} className={activeSection === 'experience' ? 'active' : ''}>Production</button>
                 <button onClick={() => scrollTo('about-me')} className={activeSection === 'about-me' ? 'active' : ''}>About me</button>
                 <button onClick={() => scrollTo('contact')} className={activeSection === 'contact' ? 'active' : ''}>Contact</button>
             </nav>
