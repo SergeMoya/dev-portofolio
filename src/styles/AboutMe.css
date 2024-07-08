@@ -1,32 +1,92 @@
+/* Styles for whole page layout */
 .aboutMeContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Equal width columns */
-  gap: 20px; /* Space between grid items */
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "picture text"
+    "picture contact";
+  gap: 20px;
   padding: 20px;
   background: blueviolet;
-  align-items: start; /* Aligns items at the start of each cell */
+  align-items: stretch; 
 }
 
+/* Styles for About me Text  */
 .aboutMeCard {
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Specific styles for picture, text, and contact areas */
 .aboutMePicture {
-  grid-row: 1 / 3; /* Span from the first to the third row */
+  grid-area: picture;
+  padding: 0;
+  display: flex; 
+  align-items: stretch; 
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 }
 
-.aboutMeText, .aboutMeContact {
-  width: 98%; /* Full width of the column */
-  height: 510px;
+.aboutMeText {
+  grid-area: text;
+  width: 97%;
 }
 
-.aboutMePicture img {
-  width: 100%; /* Make the image fill the container */
-  height: auto;
+.aboutMeContact {
+  grid-area: contact; 
+  width: 97%;
+  display: flex; /* Set the display to flex */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children horizontally in the flex container */
+  align-items: center; /* Center children vertically in the flex container */
+}
+
+/* Styles for slideshow */
+.slideshow {
+  position: relative; /* Establishes a positioning context for absolute children */
+  width: 100%; /* Ensure the slideshow covers the appropriate area */
+  height: 100%; /* Ensure the slideshow covers the appropriate area */
+}
+
+.img-wrapper {
+  display: none;
+  height: 100%;
+}
+
+.img-wrapper.active {
+  display: block; /* Display the active image */
+}
+
+/* Styles for line indicators instead of dots */
+.lines {
+  display: flex;
+  justify-content: center;
+  position: absolute; /* Absolute positioning relative to the slideshow container */
+  bottom: 0; /* Position at the bottom of the slideshow */
+  width: 100%; /* Span the entire width of the slideshow container */
+  /*background-color: rgba(0, 0, 0, 0.5); /* Optional: background color with transparency */
+}
+
+.line {
+  height: 5px;
+  width: 50px; /* Control the width of each line */
   border-radius: 8px;
+  background-color: gray;
+  margin: 10px; /* Adjust spacing between lines */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.line.active {
+  background-color: red;
 }
 
 .aboutMeContact button {
@@ -37,4 +97,5 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  
 }
