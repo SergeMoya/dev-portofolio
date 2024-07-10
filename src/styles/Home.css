@@ -269,7 +269,71 @@
   opacity: 1;
 }
 
+/* Tablet */
+@media (max-width: 768px) {
+  .homepage {
+    padding-right: 50px; /* Reduced padding for smaller screens */
+    padding-left: 50px;
+    align-items: center; /* Center alignment for better appearance on tablets */
+  }
 
+  .cardcontent, .cardpicture {
+    margin: 10px; /* Reduced margin */
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .content {
+    flex-direction: column; /* Stack elements vertically in smaller screens */
+    margin-top: 30px; /* Reduced top margin */
+  }
 
+  .text-content, .profile-pic {
+    padding-right: 0; /* Remove right padding */
+    width: 100%; /* Full width for text and images to utilize space */
+    max-width: 350px; /* Max width for images to prevent excessive enlargement */
+    margin-bottom: 10px 0; /* Adjust margin for tight spaces */
+  }
 
+  .homepage h1 {
+    font-size: 2.5rem; /* Smaller font size for headings */
+  }
+
+  .homepage h2 {
+    font-size: 1.8rem; /* Smaller font size for subheadings */
+  }
+
+  .homepage p {
+    font-size: 1.2rem; /* Slightly smaller font size for paragraphs */
+  }
+
+  .mouse_scroll {
+    display: none; /* Hide scroll animation on smaller devices */
+  }
+
+  .typing {
+    animation: none; /* Disable typing animation for performance */
+    border-right: 1px solid white; /* Reduce cursor border thickness */
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust based on your header's height */
+    left: 0;
+    right: 0;
+    background: rgba(20, 30, 48, 0.95);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000; /* Ensures the menu is above other content */
+  }
+
+  .navbar.visible {
+      transform: translateY(0);
+      display: flex; /* Ensure it displays as a block when visible */
+  }
+}
+.navbar .active {
+  color: blue;
+  font-weight: bold;
+}

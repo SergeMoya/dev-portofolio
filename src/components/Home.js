@@ -10,7 +10,7 @@ const Home = () => {
   const [h1Complete, setH1Complete] = useState(false); // State to check if h1 is completed
   const [showParagraph, setShowParagraph] = useState(false); // State to control the visibility of the paragraph
   const fullText = "Hello!";
-  const fullSubtext = "This is Acare Technology";
+  const fullSubtext = "This is Acare";
 
   useEffect(() => {
     if (text.length < fullText.length) {

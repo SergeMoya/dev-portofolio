@@ -58,20 +58,62 @@
     border-radius: 5px;
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column; /* Stack nav items under each other */
-    }
-    .navbar button {
-        display: block;
-        text-align: center;
-        width: 100%; /* Full width */
-        margin: 10px 0;
-    }
+.menu-icon {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    flex-direction: column; /* Aligns the bars vertically */
+    justify-content: space-around; /* Spaces the bars evenly */
+    height: 25px; /* Total height of the hamburger icon */
+    width: 35px; /* Width of the hamburger icon */
+    align-items: center;
 }
 
-.navbar .active {
-    color: blue; /* Example: makes the text color blue when active */
-    font-weight: bold;
+.menu-icon .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF; /* Color of the bars */
+    border-radius: 2px;
+}
+
+/* Responsive design for Tablet screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+
+    .logo {
+        font-size: 16px;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .menu-icon {
+        display: flex;
+        flex-grow: 0;
+    }
+
+    .navbar {
+        display: flex; /* Ensures the navbar is always in a flex display */
+        flex-direction: column; /* Stacks buttons vertically */
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(20, 30, 48, 0.95);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar.visible {
+        transform: translateY(0);
+    }
+
+    .navbar button {
+        text-align: center;
+        width: 100%;
+    }
 }
