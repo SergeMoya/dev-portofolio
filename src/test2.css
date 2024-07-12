@@ -35,7 +35,7 @@
 
 .logo {
     font-family: 'Montserrat', sans-serif;
-    font-size: calc(1.4vw + 10px); /* Responsive font size calculation */
+    font-size: 28px;
     color: #FFFFFF;
     cursor: pointer; /* Indicates the logo is clickable */
 }
@@ -53,7 +53,6 @@
     margin-left: 20px;
     padding: 10px 15px;
     font-family: 'Roboto', sans-serif;
-    font-size: calc(0.8vw + 6px); /* Responsive font size */
     transition: color 0.3s, background-color 0.3s;
     cursor: pointer; /* Indicates the buttons are clickable */
 }
@@ -83,82 +82,72 @@
 
 /* Responsive design for Tablet screens with Hamburger menu */
 @media (max-width: 768px) {
-    .header::after {
-        background: none;
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 10px;
+        overflow: visible;
     }
-    
+
     .logo {
-        font-size: calc(2.5vw + 12px); /* Slightly larger for visibility on small devices */
+        font-size: 16px;
         flex-grow: 1;
         text-align: left;
     }
-    
+
     .menu-icon {
-        display: block;
-    }
-
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: #cdcdcd;
-    }
-
-    .navbar {
-        position: fixed;
-        width: calc(100vw - 85px);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #5D6D7E;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        color: white;
-        font-size: calc(2vw + 12px); /* Responsive font size */
-        font-weight: bold;
-    }
-
-    .navbar button {
-        background: none;
-        border: none;
-        color: inherit;
-        font: inherit;
+        display: flex; /* Ensure it's displayed */
         cursor: pointer;
-        padding: 20px;
-        margin: 0 5px;
-    }
-
-    .navbar.open {
-        transform: translateX(0);
-    }
-
-    .navbar button.active {
-        color: tomato;
-    }
-}
-
-/* Very small devices (less than 480px) */
-@media (max-width: 480px) {
-    .header {
-        padding: 10px 20px; /* Reduce padding */
-    }
-
-    .logo {
-        font-size: calc(4vw + 6px); /* Even larger font size for very small screens */
+        flex-direction: column; /* Stacks the bars vertically */
+        justify-content: space-around; /* Evenly spaces the bars */
+        height: 25px; /* Height of the icon */
+        width: 35px; /* Width of the icon */
+        align-items: center;
     }
 
     .menu-icon .bar {
-        width: 90%; /* Full width of icon for better visibility */
+        display: block;
+        width: 100%; /* Full width of each bar */
+        height: 3px; /* Height of each bar */
+        background-color: #FFFFFF; /* Color of the bars */
+        border-radius: 2px;
+    }
+
+    .hamburger-checkbox {
+        display: none; /* Hide the actual checkbox */
     }
 
     .navbar {
-        font-size: calc(3vw + 10px); /* Adjust font size for readability */
-        width: calc(100vw - 65px);
+        position: absolute;
+        top: 50px;  /* Positioned right below the hamburger menu */
+        right: 0;   /* Start from the right side under the hamburger icon */
+        width: 150px; /* Adjust width as needed */
+        background: rgba(20, 30, 48, 0.95);
+        transform: translateX(100%); /* Start hidden by sliding to the right */
+        transition: transform 0.3s ease-out; /* Smooth transition for sliding in */
+        z-index: 999;  /* Make sure it stacks correctly */
+        flex-direction: column;
+    }
+    
+    /* Show the navbar when the checkbox is checked */
+    .hamburger-checkbox:checked ~ .navbar {
+        transform: translateX(0); /* Slide in from the right to visible position */
+    }
+    
+
+    .navbar button {
+        text-align: right;
+        width: 100%; /* Full width of each button */
+        padding: 10px 25px; /* Padding for each button */
+        color: #FFFFFF; /* Text color of the buttons */
+        background: none; /* No background initially */
+        border: none; /* No borders */
+        transition: background-color 0.3s; /* Smooth transition for hover and active states */
+        margin-left: 0px;
+    }
+
+    .navbar button:hover, .navbar button.active {
+        background-color: pink; /* A lighter blue for active/hover states */
+        border-radius: 5px;
     }
 }

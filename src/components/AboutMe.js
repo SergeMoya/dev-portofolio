@@ -1,60 +1,107 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/AboutMe.css';
-//import Image1 from '../images/art2.jpg';
-import Image2 from '../images/art3.jpg';
-import Image3 from '../images/art4.jpg';
-import Image4 from '../images/art5.png';
+import React from 'react';
+import styled from 'styled-components';
+import aboutImage from '../images/art2.jpg';  // Make sure this is Picture 1
+import profileImage from '../images/acare_profile.png';  // This is Picture 2
+
+const Main = styled.main`
+  padding: 2rem;
+  background: linear-gradient(to right, #243B55, #141E30);
+`;
+
+const Grid = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1200px;
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+`;
+
+const Column = styled.div`
+  padding: 1rem;
+  flex: 1;
+
+  @media (max-width: 900px) {
+    &:first-child {
+      margin-bottom: 1rem;
+    }
+  }
+`;
+
+const ImageContainer = styled.div`
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+`;
+
+const TextContainer = styled.div`
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: justify;
+
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.7rem;
+  }
+`;
 
 const AboutMe = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const images = [ Image2, Image3, Image4];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % images.length);
-    }, 5000); // Change slide every 5000 ms
-
-    return () => clearInterval(interval);
-  }, [images.length]); // Added images.length to dependency array
-
   return (
-    <div className="aboutMeContainer">
-      <div className="aboutMeCard aboutMePicture">
-        {/* Slideshow */}
-        <div className="slideshow">
-          {images.map((src, index) => (
-            <div className={`img-wrapper ${index === currentSlide ? 'active' : ''}`} key={index}>
-              <img src={src} alt={`Slide ${index}`} />
-            </div>
-          ))}
-          <div className="lines">
-            {images.map((_, index) => (
-              <div
-                key={index}
-                className={`line ${index === currentSlide ? 'active' : ''}`}
-                onClick={() => setCurrentSlide(index)}
-              ></div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="aboutMeCard aboutMeText">
-        <h1>Acare Technology</h1>
-        <p>Our Company and Operations Acare Technology is an ISO13485 & GMP certified company with well quality 
-           control system in Taiwan. Each unit of our products has been conducted the 
-           strictest quality inspection before shipment.
-           We are specialized in respiratory related product from diagnostic to oxygen 
-           therapy equipment to provide you comprehensive and reliable purchase.
-           Meeting your product requirement is our priority mission, and your satisfaction is 
-           our energy for high quality service.</p>
-      </div>
-      <div className="aboutMeCard aboutMeContact">
-        <p>Contact Us:</p>
-        <p>info@acarecorp.com</p>
-        <button>Follow Me!</button>
-      </div>
-    </div>
+    <>
+      <Main>
+        <Grid>
+          <Row>
+            <Column>
+              <ImageContainer>
+                <img src={aboutImage} alt="About Me" />
+              </ImageContainer>
+            </Column>
+            <Column>
+              <TextContainer>
+                <h1>About Us</h1>
+                <p>With Acare App, you can easily connect to our company's pulse oximeter and view your real-time measurement.</p>
+              </TextContainer>
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              <ImageContainer>
+                <img src={profileImage} alt="Acare Profile" />
+              </ImageContainer>
+            </Column>
+            <Column>
+              <TextContainer>
+                <p>Detailed information about the application features, user benefits, and more technical insights.</p>
+              </TextContainer>
+            </Column>
+          </Row>
+        </Grid>
+      </Main>
+    </>
   );
-};
+}
 
 export default AboutMe;
