@@ -1,160 +1,47 @@
-.timeline-container {
-    width: 90%;
-    margin: 60px auto;
-    position: relative;
-    padding-left: 40px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Softer shadow */
-}
-  
-.timeline-item {
-    margin-bottom: 40px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center; /* Align children vertically in the middle */
-    position: relative;
-    cursor: pointer; /* Indicate it is clickable */
-    transition: transform 0.2s ease; /* Smooth transition for hover effect */
-    /* background-color: yellow; Temporary background color for visibility*/
+.vertical-timeline-element-title {
+  color: #1C71A4;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* class for the date display */
-.timeline-date {
-    flex: 0 0 150px; /* No grow, no shrink, basis 150px */
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px; /* Space between the date and content */
-    /* background-color: #4A90E2;  Color for visual distinction */
-    color: white;
-    border-radius: 10px;
-    font-weight: bold;
-    /*margin-right: 20px;  Space between the date and content */
-    white-space: nowrap; /* Prevent the date from wrapping */
+.vertical-timeline-element-subtitle {
+  margin: 0;
+  margin-top: 5px;
+  color: red;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.timeline-content {
-    flex: 1 1 auto; /* Grow and shrink, but start with auto basis */
-    max-width: calc(100% - 170px); /* Adjust max-width considering date width and margins */
-    color: white;
-    /* background-color: rgb(180, 177, 177); */
-    border-radius: 8px;
-    padding: 10px;
-    text-align: left;
-    overflow: hidden; /* Hide content initially for smooth expansion */
+/* Style the date to be bold and white */
+.vertical-timeline-element-date {
+  color: white !important;  
+  top: 0px !important;  
 }
 
-.timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Align items vertically in center */
-}
-  
-.timeline-role-company {
-    flex: 2; /* Adjusted for better spacing */
-    text-align: left; /* Ensures text is aligned to the left */
+/* Optionally, style the icon containers if needed */
+.vertical-timeline-element-icon {
+  color: white; /* Set icon text color to white */
+  background: #1C71A4 !important; /* Consistent background color for icons */
 }
 
-.timeline-location {
-    flex: 1;
-    text-align: right; /* Ensures text is aligned to the right */
-
+.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date{
+  left:90%;
+  font-size:24px;
+  font-size: bold;
 }
 
-.timeline-content h3, .timeline-content h4, .timeline-content h5, .timeline-content p {
-    transition: margin 0.2s ease;
-}
-
-.timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+/* Add this to your custom CSS file, e.g., Experience.css */
+.vertical-timeline-element-title, 
+.vertical-timeline-element-subtitle, 
+.vertical-timeline-element-content p {
+  text-align: left; /* Aligns text to the left */
 }
 
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.section-title {
+  text-align: center;
+  margin: 2em 0;
+  font-size: 2.5em; /* Increased font size */
+  color: white; /* Set text color to white */
+  /*background-color: #333;  Optional: add a background color if needed */
+  padding: 10px; /* Optional: add padding for better visual spacing */
 }
 
-
-/* Tablet */
-@media screen and (max-width: 768px) {
-    .timeline-container {
-        width: 90%;
-        margin: 20px auto;
-        position: relative;
-        padding-left: 10px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .timeline-item {
-        margin-bottom: 40px;
-        margin-top: 20px;
-        display: flex;
-        align-items: center; /* Align children vertically in the middle */
-        position: relative;
-        cursor: pointer; /* Indicate it is clickable */
-        transition: transform 0.2s ease; /* Smooth transition for hover effect */
-        /* background-color: yellow; Temporary background color for visibility*/
-    }
-
-    .timeline-date {
-        flex: 0 0 120px; /* No grow, no shrink, fixed width of 120px */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* background-color: #4A90E2;  Color for visual distinction */
-        color: white;
-        border-radius: 10px;
-        font-weight: bold;
-        margin-right: 10px; /* Space between the date and content */
-        white-space: nowrap; /* Prevent the date from wrapping */
-    }
-    
-    .timeline-content {
-        flex: 1 1 auto; /* Grow and shrink, but start with auto basis */
-        max-width: calc(100% - 140px); /* Adjust width considering the date element and margins */
-        /* background-color: rgb(180, 177, 177); */
-        border-radius: 8px;
-        font-size:12px;
-        padding: 10px;
-        text-align: left;
-        overflow: hidden; /* Hide content initially for smooth expansion */
-    }
-
-    .timeline-header {
-        display: flex;
-        font-weight: bold;
-        text-align: left;
-        flex-direction: column; /* Stack children vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-      
-    .timeline-role-company {
-        text-align: left; /* Ensures text is aligned to the left */
-    }
-    
-    .timeline-location {
-        text-align: left; /* Left-align the text */
-        margin-top: 0;
-    }
-
-    .timeline-content:not(.expanded) .timeline-location {
-        display: none; /* Hide location in collapsed state */
-    }
-    
-    .timeline-content h3, .timeline-content h4, .timeline-content h5, .timeline-content p {
-        transition: margin 0.2s ease;
-    }
-    
-    .timeline-content:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-    }
-}

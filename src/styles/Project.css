@@ -1,92 +1,86 @@
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* This will space out the project cards evenly */
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .project-card {
-    display: flex;
-    flex-direction: column; /* Stack the children vertically */
-    justify-content: space-between; /* Distributes space around items */
-    align-items: center; /* Aligns items centrally in the cross-axis (horizontal in this case) */
-    flex: 1 1 45%; /* Each card will take up roughly 45% of the container width */
-    max-width: 45%; /* Ensure the card does not exceed 45% width */
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    margin: 10px; /* Adds some space between cards */
-    transition: transform 0.3s ease;
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: contain; /* Changes from cover to contain */
-    border: 1px solid #ccc; /* Optional: Adds a border to make the frame clear */
-    background: #f8f8f8; /* Optional: Adds a background color to fill any empty space */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows wrapping to handle responsiveness */
+  justify-content: space-around; /* Ensures even spacing on all sides */
+  padding: 20px;
+  margin: auto;
 }
-  
-  
-  .project-info {
-    padding: 15px;
-    text-align: left;
-  }
-  
-  .project-info h3 {
-    color: #333;
-    font-size: 24px;
-  }
-  
-  .project-info p {
-    color: #666;
-    font-size: 16px;
-    margin: 10px 0;
-  }
-  
-  .technologies {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .technologies li {
-    background: #eee;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color and background */
-    cursor: pointer; /* Indicates that the item is interactive */
-  }
 
-  .technologies li:hover {
-    background-color: #8fbc8f; /* Light green background on hover */
-    color: #fff; /* Change text color to white for better contrast */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 300px; /* Flex-grow, flex-shrink and flex-basis set for adaptive sizing */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the allocated space without distortion */
+}
+
+.project-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-info h3, .project-info p {
+  margin: 10px 0;
+}
+
+.technologies {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers technology tags within the card */
+  gap: 10px;
+}
+
+.technologies li {
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.project-link {
+  display: inline-block;
+  background: #4A90E2;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 900px) {
+  .projects-container {
+    flex-direction: column;
+    justify-content: center; /* Centers cards in the container */
   }
-  
-  .project-link {
-    display: inline-block;
-    background: #4A90E2;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 10px;
+  .project-card {
+    width: 80%; /* Cards take up almost full width for better readability */
   }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 400px) {
+  .project-card {
+    width: 100%; /* Full width for very small devices */
   }
-  
-  @media (max-width: 768px) {
-    .projects-container {
-        grid-template-columns: 1fr; /* Only one column on smaller screens */
-    }
+  .technologies li {
+    font-size: 12px; /* Smaller font size for technology tags */
   }
-  
+}
