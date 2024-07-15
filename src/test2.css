@@ -1,153 +1,140 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
 
-/* Global styles */
-.hamburger-checkbox {
-    display: none; /* Ensure checkbox is always hidden */
+/* General body styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f9f9f9;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: linear-gradient(to right, #243B55, #141E30);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden; /* Needed to contain the pseudo-element within the header */
+/* Timeline container styling */
+.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
 }
 
-.header::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    height: 2px;
-    background: #FFFFFF; /* White underline */
-    transition: all 0.3s ease;
+/* Timeline vertical line */
+#timeline:before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #1C71A4;
+  left: 50%;
+  top: 0;
+  position: absolute;
+  transition: all 0.4s ease;
 }
 
-.header:hover::after {
+/* Individual timeline item styling */
+.timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Icon styling with animation */
+.timeline-icon {
+  background: #1C71A4;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  animation: bounce-1 0.6s;
+}
+
+/* Content block styling with transition */
+.timeline-content {
+  width: 45%;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Content header styles */
+.timeline-content h2, .timeline-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1C71A4;
+  padding: 15px;
+  background: #1C71A4;
+  color: white;
+  margin: -20px -20px 0 -20px;
+  border-radius: 3px 3px 0 0;
+  font-size: 22px;
+}
+
+/* Paragraph styles */
+.timeline-content p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Arrow positioning and styling */
+.timeline-content:before {
+  content: '';
+  position: absolute;
+  left: 45%;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #1C71A4;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 768px) {
+  #timeline:before {
     left: 0;
-    right: 0; /* Expands the underline across the full width on hover */
+  }
+
+  .timeline-content, .timeline-content.right {
+    width: 90%;
+    float: none;
+    transform: translateX(-5%);
+    left: 5%;
+  }
+
+  .timeline-icon {
+    left: 10px;
+    transform: none;
+  }
+
+  .timeline-content:before, .timeline-content.right:before {
+    left: 10%;
+    margin-left: -6px;
+    border-left: 0;
+    border-right: 7px solid #1C71A4;
+  }
 }
 
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    color: #FFFFFF;
-    cursor: pointer; /* Indicates the logo is clickable */
-}
-
-.navbar {
-    display: flex;
-    list-style: none;
-}
-
-.navbar button {
-    background: none;
-    border: none;
-    text-decoration: none;
-    color: #FFFFFF;
-    margin-left: 20px;
-    padding: 10px 15px;
-    font-family: 'Roboto', sans-serif;
-    transition: color 0.3s, background-color 0.3s;
-    cursor: pointer; /* Indicates the buttons are clickable */
-}
-
-.navbar button:hover, .navbar button.active {
-    background-color: #1565C0; /* A lighter blue for active/hover states */
-    border-radius: 5px;
-}
-
-.menu-icon {
-    display: none; /* Hidden by default */
-    cursor: pointer;
-    flex-direction: column; /* Aligns the bars vertically */
-    justify-content: space-around; /* Spaces the bars evenly */
-    height: 25px; /* Total height of the hamburger icon */
-    width: 35px; /* Width of the hamburger icon */
-    align-items: center;
-}
-
-.menu-icon .bar {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #FFFFFF; /* Color of the bars */
-    border-radius: 2px;
-}
-
-/* Responsive design for Tablet screens with Hamburger menu */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 5px 10px;
-        overflow: visible;
-    }
-
-    .logo {
-        font-size: 16px;
-        flex-grow: 1;
-        text-align: left;
-    }
-
-    .menu-icon {
-        display: flex; /* Ensure it's displayed */
-        cursor: pointer;
-        flex-direction: column; /* Stacks the bars vertically */
-        justify-content: space-around; /* Evenly spaces the bars */
-        height: 25px; /* Height of the icon */
-        width: 35px; /* Width of the icon */
-        align-items: center;
-    }
-
-    .menu-icon .bar {
-        display: block;
-        width: 100%; /* Full width of each bar */
-        height: 3px; /* Height of each bar */
-        background-color: #FFFFFF; /* Color of the bars */
-        border-radius: 2px;
-    }
-
-    .hamburger-checkbox {
-        display: none; /* Hide the actual checkbox */
-    }
-
-    .navbar {
-        position: absolute;
-        top: 50px;  /* Positioned right below the hamburger menu */
-        right: 0;   /* Start from the right side under the hamburger icon */
-        width: 150px; /* Adjust width as needed */
-        background: rgba(20, 30, 48, 0.95);
-        transform: translateX(100%); /* Start hidden by sliding to the right */
-        transition: transform 0.3s ease-out; /* Smooth transition for sliding in */
-        z-index: 999;  /* Make sure it stacks correctly */
-        flex-direction: column;
-    }
-    
-    /* Show the navbar when the checkbox is checked */
-    .hamburger-checkbox:checked ~ .navbar {
-        transform: translateX(0); /* Slide in from the right to visible position */
-    }
-    
-
-    .navbar button {
-        text-align: right;
-        width: 100%; /* Full width of each button */
-        padding: 10px 25px; /* Padding for each button */
-        color: #FFFFFF; /* Text color of the buttons */
-        background: none; /* No background initially */
-        border: none; /* No borders */
-        transition: background-color 0.3s; /* Smooth transition for hover and active states */
-        margin-left: 0px;
-    }
-
-    .navbar button:hover, .navbar button.active {
-        background-color: pink; /* A lighter blue for active/hover states */
-        border-radius: 5px;
-    }
+/* Animation for icons and content blocks */
+@keyframes bounce-1 {
+  0% {
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -1,107 +1,85 @@
-import React from 'react';
-import styled from 'styled-components';
-import aboutImage from '../images/art2.jpg';  // Make sure this is Picture 1
-import profileImage from '../images/acare_profile.png';  // This is Picture 2
-
-const Main = styled.main`
-  padding: 2rem;
-  background: linear-gradient(to right, #243B55, #141E30);
-`;
-
-const Grid = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 1200px;
-`;
-
-const Row = styled.div`
+.projects-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-  }
-
-  &:nth-child(odd) {
-    flex-direction: row-reverse;
-
-    @media (max-width: 900px) {
-      flex-direction: column;
-    }
-  }
-`;
-
-const Column = styled.div`
-  padding: 1rem;
-  flex: 1;
-
-  @media (max-width: 900px) {
-    &:first-child {
-      margin-bottom: 1rem;
-    }
-  }
-`;
-
-const ImageContainer = styled.div`
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-`;
-
-const TextContainer = styled.div`
-  padding: 1rem;
-  color: #ffffff;
-  font-size: 1rem;
-  text-align: justify;
-
-  @media (max-width: 600px) {
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 0.7rem;
-  }
-`;
-
-const AboutMe = () => {
-  return (
-    <>
-      <Main>
-        <Grid>
-          <Row>
-            <Column>
-              <ImageContainer>
-                <img src={aboutImage} alt="About Me" />
-              </ImageContainer>
-            </Column>
-            <Column>
-              <TextContainer>
-                <h1>About Us</h1>
-                <p>With Acare App, you can easily connect to our company's pulse oximeter and view your real-time measurement.</p>
-              </TextContainer>
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <ImageContainer>
-                <img src={profileImage} alt="Acare Profile" />
-              </ImageContainer>
-            </Column>
-            <Column>
-              <TextContainer>
-                <p>Detailed information about the application features, user benefits, and more technical insights.</p>
-              </TextContainer>
-            </Column>
-          </Row>
-        </Grid>
-      </Main>
-    </>
-  );
+  flex-wrap: wrap; /* Allows wrapping to handle responsiveness */
+  justify-content: space-around; /* Ensures even spacing on all sides */
+  padding: 20px;
+  margin: auto;
 }
 
-export default AboutMe;
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 300px; /* Flex-grow, flex-shrink and flex-basis set for adaptive sizing */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the allocated space without distortion */
+}
+
+.project-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-info h3, .project-info p {
+  margin: 10px 0;
+}
+
+.technologies {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers technology tags within the card */
+  gap: 10px;
+}
+
+.technologies li {
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.project-link {
+  display: inline-block;
+  background: #4A90E2;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 900px) {
+  .projects-container {
+    justify-content: center; /* Centers cards in the container */
+  }
+  .project-card {
+    width: 90%; /* Cards take up almost full width for better readability */
+  }
+}
+
+@media (max-width: 400px) {
+  .project-card {
+    width: 100%; /* Full width for very small devices */
+  }
+  .technologies li {
+    font-size: 12px; /* Smaller font size for technology tags */
+  }
+}

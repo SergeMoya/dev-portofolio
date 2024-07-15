@@ -22,14 +22,14 @@ const Row = styled.div`
   width: 100%;
 
   @media (max-width: 900px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   &:nth-child(odd) {
     flex-direction: row-reverse;
 
     @media (max-width: 900px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
 `;
@@ -75,27 +75,27 @@ const AboutMe = () => {
         <Grid>
           <Row>
             <Column>
-              <ImageContainer>
-                <img src={aboutImage} alt="About Me" />
-              </ImageContainer>
-            </Column>
-            <Column>
               <TextContainer>
                 <h1>About Us</h1>
                 <p>With Acare App, you can easily connect to our company's pulse oximeter and view your real-time measurement.</p>
               </TextContainer>
             </Column>
-          </Row>
-          <Row>
             <Column>
               <ImageContainer>
-                <img src={profileImage} alt="Acare Profile" />
+                <img src={aboutImage} alt="About Me" />
               </ImageContainer>
             </Column>
+          </Row>
+          <Row>
             <Column>
               <TextContainer>
                 <p>Detailed information about the application features, user benefits, and more technical insights.</p>
               </TextContainer>
+            </Column>
+            <Column>
+              <ImageContainer>
+                <img src={profileImage} alt="Acare Profile" />
+              </ImageContainer>
             </Column>
           </Row>
         </Grid>
