@@ -1,4 +1,6 @@
 import React from 'react';
+import { Tilt } from 'react-tilt';
+import { motion } from 'framer-motion';
 import '../styles/Project.css';
 import Image1 from '../images/Project1.png';
 import Image2 from '../images/Project2.png';
@@ -14,35 +16,47 @@ const projects = [
   },
   {
     title: "Pulse Oximeter Full Stack Application",
-    description: "A medical platform platform designed to handle millions of transactions securely with real-time data processing.",
+    description: "A medical platform designed to handle millions of transactions securely with real-time data processing.",
     technologies: ["Angular", "Express", "MySQL", "Azure"],
     image: Image2,
     link: "#"
   },
   {
-    title: "Real-Time hear rate Analytics App",
-    description: "A dynamic application providing real-time heart rate  analytics using WebSocket for live data updates.",
+    title: "Real-Time Heart Rate Analytics App",
+    description: "A dynamic application providing real-time heart rate analytics using WebSocket for live data updates.",
     technologies: ["Vue.js", "Flask", "PostgreSQL", "Google Cloud"],
     image: Image3,
     link: "#"
   }
 ];
 
+const fadeIn = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.5 } }
+};
+
 const Project = () => {
   return (
     <div className="projects-container">
       {projects.map((project, index) => (
-        <div key={index} className="project-card">
-          <img src={project.image} alt={project.title} className="project-image" />
-          <div className="project-info">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <ul className="technologies">
-              {project.technologies.map(tech => <li key={tech}>{tech}</li>)}
-            </ul>
-            <a href={project.link} className="project-link">View Project</a>
-          </div>
-        </div>
+        <Tilt className="Tilt" options={{ max: 25, scale: 1.05 }} key={index}>
+          <motion.div 
+            className="project-card"
+            variants={fadeIn}
+            initial="hidden"
+            animate="show"
+          >
+            <img src={project.image} alt={project.title} className="project-image" />
+            <div className="project-info">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <ul className="technologies">
+                {project.technologies.map(tech => <li key={tech}>{tech}</li>)}
+              </ul>
+              <a href={project.link} className="project-link">View Project</a>
+            </div>
+          </motion.div>
+        </Tilt>
       ))}
     </div>
   );

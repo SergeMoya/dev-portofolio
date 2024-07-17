@@ -5,7 +5,8 @@ import Home from './components/Home';
 import Skills from './components/Skills';
 import AboutMe from './components/AboutMe';
 import Experience from './components/Experience';
-//import Project from './components/Project';
+import Project from './components/Project';
+//import Contact from './components/Contact';
 // Import other components as needed*/
 
 const App = () => {
@@ -16,8 +17,9 @@ const App = () => {
       <div id="skills"><Skills /></div>
       <div id="about-me"><AboutMe /></div>
       <div id="experience"><Experience /></div>
-      {/*<div id="projects"><Project /></div>
-      {/* Add other sections here as needed */}
+      <div id="projects"><Project /></div>
+      {/*<div id="contact"><Contact/></div>
+       Add other sections here as needed */}
     </div>
   );
 };

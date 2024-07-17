@@ -10,7 +10,7 @@ const StarsBackground = ({ width, height }) => {
     canvas.height = height || window.innerHeight;
 
     let stars = [];
-    const numStars = 100; // Reduced number of stars for minimalism
+    const numStars = 300; // Reduced number of stars for minimalism
 
     class Star {
       constructor(x, y, radius, velocity) {
@@ -47,7 +47,7 @@ const StarsBackground = ({ width, height }) => {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
         const radius = Math.random() * 1.2; // Smaller max size
-        const velocity = Math.random() * 0.2; // Slower velocity
+        const velocity = Math.random() * 0.8; // Slower velocity
         stars.push(new Star(x, y, radius, velocity));
       }
     }

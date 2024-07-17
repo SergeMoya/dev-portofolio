@@ -1,0 +1,89 @@
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #243B55, #141E30);
+    position: relative; /* Needed to position canvas absolutely within this container */
+}
+
+.contact-card {
+    width: 90%;
+    max-width: 500px;
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
+    z-index: 2; /* Higher than canvas */
+    position: relative; /* To stack above the canvas */
+    transition: max-width 0.3s ease; /* Smooth transition for resizing */
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    color: #FFD700;
+    margin-right: 10px;
+    font-size: 1.5rem; /* Adjust size as needed */
+}
+
+span {
+    color: #fff; /* Adjust text color as needed */
+    font-size: 1rem; /* Standard font size */
+}
+
+h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 2rem; /* Standard header font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .contact-card {
+        max-width: 80%; /* Allows for more width on smaller screens */
+    }
+    h2 {
+        font-size: 1.5rem; /* Smaller font size for headers on smaller screens */
+    }
+    .icon {
+        font-size: 1.2rem; /* Smaller icons */
+    }
+    span {
+        font-size: 0.9rem; /* Smaller text */
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-card {
+        max-width: 95%; /* Almost full width for very small screens */
+        padding: 1rem; /* Less padding for tighter spaces */
+    }
+    .info-item {
+        flex-direction: column; /* Stack icons and text vertically */
+        align-items: flex-start;
+    }
+    .icon {
+        margin-bottom: 5px; /* Space between icon and text when stacked */
+    }
+}
+
+@media (max-width: 300px) {
+    .contact-card {
+        padding: 0.5rem; /* Minimal padding for extremely small screens */
+    }
+    h2, span {
+        font-size: 0.8rem; /* Further reduce text size */
+    }
+    .icon {
+        font-size: 1rem; /* Smaller icon size */
+    }
+}
