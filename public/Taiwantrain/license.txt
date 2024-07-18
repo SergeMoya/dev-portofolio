@@ -1,0 +1,11 @@
+Model Information:
+* title:	Taiwan Railway GE E400 / Interior
+* source:	https://sketchfab.com/3d-models/taiwan-railway-ge-e400-interior-e7ecaed230034298b7b0c81ab85e0f86
+* author:	Basic Hsu (https://sketchfab.com/Hsu.Pei.Ge)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Taiwan Railway GE E400 / Interior" (https://sketchfab.com/3d-models/taiwan-railway-ge-e400-interior-e7ecaed230034298b7b0c81ab85e0f86) by Basic Hsu (https://sketchfab.com/Hsu.Pei.Ge) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
