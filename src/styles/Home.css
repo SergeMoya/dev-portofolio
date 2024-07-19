@@ -79,6 +79,11 @@
       align-items: center;
     }
 
+    .Canvas {
+      top: 350px; /* Adjust top position */
+      height: 40vh; /* Smaller viewport height */
+    }
+
     .cardcontent {
       margin: 10px;
       flex-direction: column;

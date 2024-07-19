@@ -1,7 +1,6 @@
 .mouse_scroll {
     display: block;
     margin: 0 auto;
-    margin-top: 200px;
     width: 24px;
 }
   
@@ -49,7 +48,7 @@
       margin: 0 auto;
       width: 24px;
       height: 100px;
-      margin-top: 80px;
-      margin-bottom: 80px;
+      margin-top: 180px;
+      margin-bottom: 50px;
     }
 }

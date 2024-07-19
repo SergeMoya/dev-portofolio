@@ -1,10 +1,11 @@
-
 body {
     background: #ccc;
 }
 
 .skills-section {
+    height: 100vh;
     padding-top: 20px;
+    overflow: hidden;
 }
 
 .skills-header {
@@ -32,15 +33,17 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     padding: 1rem 80px;
     font-size: 1.2rem;
 }
 
 .skills-box {
     padding: 1rem;
+    margin-right: 20px;
     color: #000;
     cursor: pointer;
+    flex: none;
 }
 
 .skills-box:hover > .skills-title:after, 
@@ -93,6 +96,32 @@ body {
     color: white;
     margin-top: 0.5rem;
 }
+
+.slider {
+    width: calc(200%); /* 100% for each set */
+    display: flex;
+}
+
+.track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+}
+
+.icon-set {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    margin-right: 30px;
+}
+
+@keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%); /* Move to the left by half the total width */
+    }
+  }
 
 
 /*IDE like modal view styling*/
