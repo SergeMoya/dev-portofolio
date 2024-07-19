@@ -11,7 +11,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: linear-gradient(to right, #243B55, #141E30);
+    /*background: linear-gradient(to right, #243B55, #141E30);*/
+    background:#050816;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden; /* Needed to contain the pseudo-element within the header */

@@ -1,149 +1,84 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import aboutImage from '../images/art2.jpg';
-import profileImage from '../images/acare_profile.png';  
+import React, { useState } from 'react';
+import '../styles/Skills.css';
 
-const Main = styled.main`
-  padding: 2rem;
-  background: linear-gradient(to right, #243B55, #141E30);
-`;
+// Skills data
+const skillsData = [
+  { key: 'javascript', title: 'JavaScript', imgSrc: '../images/logo/javascript.svg' },
+  { key: 'react', title: 'React', imgSrc: '../images/logo/react.svg' },
+  { key: 'nodejs', title: 'Node.js', imgSrc: '../images/logo/nodedotjs.svg' },
+  { key: 'mongodb', title: 'MongoDB', imgSrc: '../images/logo/mongodb.svg' },
+  { key: 'express', title: 'Express', imgSrc: '../images/logo/express.svg' },
+  { key: 'aws', title: 'AWS', imgSrc: 'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/aws/aws.png' }, // Update if AWS logo is downloaded
+  { key: 'html5', title: 'HTML5', imgSrc: '../images/logo/html5.svg' },
+  { key: 'css3', title: 'CSS3', imgSrc: '../images/logo/css3.svg' },
+  { key: 'git', title: 'Git', imgSrc: '../images/logo/git.svg' },
+  { key: 'jest', title: 'Jest', imgSrc: '../images/logo/jest.svg' }
+];
 
-const Grid = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 1200px;
-`;
+const Skills = () => {
+  const [visiblePopup, setVisiblePopup] = useState(null);
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  const handleTogglePopup = (key) => {
+    setVisiblePopup(visiblePopup === key ? null : key);
+  };
 
-  @media (max-width: 900px) {
-    flex-direction: column-reverse;
-  }
-
-  &:nth-child(odd) {
-    flex-direction: row-reverse;
-
-    @media (max-width: 900px) {
-      flex-direction: column-reverse;
-    }
-  }
-`;
-
-const Column = styled.div`
-  padding: 1rem;
-  flex: 1;
-
-  @media (max-width: 900px) {
-    &:first-child {
-      margin-bottom: 1rem;
-    }
-  }
-`;
-
-const ImageContainer = styled.div`
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-`;
-
-const TextContainer = styled.div`
-  padding: 1rem;
-  color: #ffffff;
-  font-size: 1rem;
-  text-align: justify;
-
-  @media (max-width: 600px) {
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 0.7rem;
-  }
-`;
-
-const SocialIcon = styled.a`
-  color: #ffffff;
-  margin: 0 1rem;
-  font-size: 2rem;
-  position: relative;
-  display: inline-block;
-
-  &:hover {
-    color: #1da1f2; // Or any color you prefer
-  }
-
-  &:hover span {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-const AboutMe = () => {
   return (
-    <>
-      <Main>
-        <Grid>
-          <Row>
-            <Column>
-              <TextContainer>
-                <h1>About Us</h1>
-                <p>With Acare App, you can easily connect to our company's pulse oximeter and view your real-time measurement.</p>
-              </TextContainer>
-            </Column>
-            <Column>
-              <ImageContainer>
-                <img src={aboutImage} alt="About Me" />
-              </ImageContainer>
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <TextContainer>
-                <p>Detailed information about the application features, user benefits, and more technical insights.</p>
-              </TextContainer>
-            </Column>
-            <Column>
-              <ImageContainer>
-                <img src={profileImage} alt="Acare Profile" />
-              </ImageContainer>
-            </Column>
-          </Row>
-          <SocialMediaContainer>
-            <SocialIcon href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">
-              <FontAwesomeIcon icon={faGithub} />
-              <Tooltip>GitHub</Tooltip>
-            </SocialIcon>
-            <SocialIcon href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} />
-              <Tooltip>LinkedIn</Tooltip>
-            </SocialIcon>
-            <SocialIcon href="mailto:your-email@gmail.com" target="_blank" aria-label="Gmail">
-              <FontAwesomeIcon icon={faEnvelope} />
-              <Tooltip>Gmail</Tooltip>
-            </SocialIcon>
-            <SocialIcon href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} />
-              <Tooltip>Instagram</Tooltip>
-            </SocialIcon>
-            <SocialIcon href="https://scholar.google.com/citations?user=yourprofile" target="_blank" aria-label="Google Scholar">
-              <FontAwesomeIcon icon={faGoogleScholar} />
-              <Tooltip>Google Scholar</Tooltip>
-            </SocialIcon>
-          </SocialMediaContainer>
-        </Grid>
-      </Main>
-    </>
+    <div className="skills-section">
+      <div className="skills-header">
+        <h1>Acare Technology</h1>
+      </div>
+      <div className="skills-container">
+        <div className="slider">
+          <div className="track">
+            {/* Repeat the icons twice for the infinite loop */}
+            {[...Array(2)].map((_, i) => (
+              <div className="icon-set" key={i}>
+                {skillsData.map(({ key, title, imgSrc }) => (
+                  <div className="skills-box" key={key} onClick={() => handleTogglePopup(key)}>
+                    <div className="skills-title">
+                      <div className="skills-img">
+                        <img src={imgSrc} alt={`${title} Logo`} className="skills-icons" />
+                        {visiblePopup === key && (
+                          <div className="popup">
+                            <div className="editor-window">
+                              <div className="window-controls">
+                                <span className="control close"></span>
+                                <span className="control minimize"></span>
+                                <span className="control expand"></span>
+                              </div>
+                              <div className="editor-container">
+                                <div className="line-numbers">
+                                  {Array.from({ length: 5 }).map((_, index) => (
+                                    <span key={index} style={{ display: 'block' }}>{index + 1}</span>
+                                  ))}
+                                </div>
+                                <div className="code-container">
+                                  {[
+                                    `<span style="color: #dcdcdc;">const</span> <span style="color: #9cdcfe;">developerInfo</span> = {`,
+                                    `<div class="indent-1"><span style="color: #dcdcdc;">keyProjects:</span> <span style="color: #ce9178;">'Dashboard App',</span></div>`,
+                                    `<div class="indent-1"><span style="color: #dcdcdc;">techSkills:</span> <span style="color: #ce9178;">'React, Node.js',</span></div>`,
+                                    `<div class="indent-1"><span style="color: #dcdcdc;">certifications:</span> <span style="color: #ce9178;">'Advanced JavaScript Course'</span></div>`,
+                                    `};`
+                                  ].map((line, index) => (
+                                    <div key={index} className="code-block" dangerouslySetInnerHTML={{ __html: line }}></div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <h3>{title}</h3>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
-export default AboutMe;
+export default Skills;

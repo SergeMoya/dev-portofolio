@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import AboutMe from './components/AboutMe';
 import Experience from './components/Experience';
 import Project from './components/Project';
+import Footer from './components/Footer';
 //import Contact from './components/Contact';
 // Import other components as needed*/
 
@@ -20,6 +21,7 @@ const App = () => {
       <div id="projects"><Project /></div>
       {/*<div id="contact"><Contact/></div>
        Add other sections here as needed */}
+      <Footer />
     </div>
   );
 };
