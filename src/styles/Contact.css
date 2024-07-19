@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #243B55, #141E30);
+    /*background: linear-gradient(to right, #243B55, #141E30);*/
+    background:#050816;
     position: relative; /* Needed to position canvas absolutely within this container */
 }
 

@@ -7,7 +7,8 @@ import profileImage from '../images/acare_profile.png';  // This is Picture 2
 
 const Main = styled.main`
   padding: 2rem;
-  background: linear-gradient(to right, #243B55, #141E30);
+  /*background: linear-gradient(to right, #243B55, #141E30);*/
+  background:#050816;
 `;
 
 const Grid = styled.div`

@@ -2,7 +2,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
-const TaiwanTrainScene = () => {
+const Train = () => {
   const model = useGLTF('/mushroom/scene.gltf', true);
 
   return (
@@ -21,4 +21,4 @@ const TaiwanTrainScene = () => {
   );
 };
 
-export default TaiwanTrainScene;
+export default Train;
