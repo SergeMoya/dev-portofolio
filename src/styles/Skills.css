@@ -1,11 +1,6 @@
-body {
-    background: #ccc;
-}
-
 .skills-section {
-    height: 100vh;
     padding-top: 20px;
-    overflow: hidden;
+    overflow: visible; /* Changed to visible to ensure no content is clipped */
 }
 
 .skills-header {
@@ -29,13 +24,14 @@ body {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Corrected 'grid-tempLate-columns' to 'grid-template-columns' */
+    grid-template-columns: repeat(5, 1fr); /* Desktop layout */
     justify-content: center;
     align-items: center;
     text-align: center;
     grid-gap: 2rem;
     padding: 1rem 80px;
     font-size: 1.2rem;
+    overflow: visible; /* Ensure overflow is visible to allow all content to be seen */
 }
 
 .skills-box {
@@ -98,13 +94,26 @@ body {
 }
 
 .slider {
-    width: calc(200%); /* 100% for each set */
     display: flex;
+    width: 200%; /* Double the width to ensure smooth transition */
+    position: relative;
 }
 
 .track {
     display: flex;
-    animation: scroll 40s linear infinite;
+    width: 100%; /* Ensure the track spans the entire container */
+    animation: scroll 10s linear infinite; /* Adjust duration as needed */
+}
+
+.track::after {
+    content: '';
+    display: flex;
+    width: 100%; /* Duplicate the content width */
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position it right after the first track */
+    pointer-events: none; /* Prevent interactions */
 }
 
 .icon-set {
@@ -122,6 +131,7 @@ body {
       transform: translateX(-50%); /* Move to the left by half the total width */
     }
   }
+
 
 
 /*IDE like modal view styling*/
@@ -221,39 +231,39 @@ body {
 }
 
 
+
 @media screen and (max-width: 990px) {
+    .skills-section {
+        height: auto; 
+    } 
     .skills-container {
-        grid-template-columns: repeat(1, 1fr);  /* Single column layout for smaller screens */
-        padding: 2rem 50px;  /* Consistent padding */
+        display: grid;  
+        grid-template-columns: repeat(1, 1fr);  
+        padding: 1rem 20px;  
     }
-    .skills-box:hover .skills-img {
-        transform: none;  /* Disable hover effects for touch devices */
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .skills-container {
-        grid-template-columns: repeat(1, 1fr);  /* Ensure single column on very small screens */
-        padding: 2rem 50px;  /* Maintain padding */
-    }
-    .popup {
-        margin-top: 5px;  /* Minor adjustment for popup spacing */
-    }
-    .skills-box:hover .skills-img {
-        transform: none;  /* Ensure no hover transformation on touch devices */
-    }
-}
-
-/* Additional media query for handling touch interactions specifically */
-@media (hover: none) {
     .skills-box {
-        -webkit-tap-highlight-color: transparent;  /* Disable tap highlight color for WebKit browsers */
+        width: 100%;  
+        margin-bottom: 10px;  
+        display: flex;  
+        justify-content: center;  
     }
-    .skills-box:active, .skills-box:focus {
-        outline: none;  /* Remove outlines on active/focus */
-        background-color: rgba(0, 0, 0, 0);  /* Optional: adjust background color on tap */
+    .slider, .track {
+        width: 100%;  
+        display: block;  
+        position: static;  
+        animation: none;  
+    }
+    .icon-set {
+        display: grid;  
+        grid-template-columns: repeat(1, 1fr);  
+        gap: 10px;  
+    }
+    .skills-icons {
+        width: 40px;  
+        margin-bottom: 5px; 
     }
 }
+
 
 
 

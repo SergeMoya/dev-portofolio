@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 import '../styles/Skills.css';
+// Importing images
+import javascriptLogo from '../images/logo/javascript.svg';
+import reactLogo from '../images/logo/react.svg';
+import nodejsLogo from '../images/logo/nodedotjs.svg';
+import mongodbLogo from '../images/logo/mongodb.svg';
+import expressLogo from '../images/logo/express.svg';
+import awsLogo from '../images/logo/aws.svg';
+import html5Logo from '../images/logo/html5.svg';
+import css3Logo from '../images/logo/css3.svg';
+import gitLogo from '../images/logo/git.svg';
+import jestLogo from '../images/logo/jest.svg';
 
 // Skills data
 const skillsData = [
-  { key: 'javascript', title: 'JavaScript', imgSrc: '../images/logo/javascript.svg' },
-  { key: 'react', title: 'React', imgSrc: '../images/logo/react.svg' },
-  { key: 'nodejs', title: 'Node.js', imgSrc: '../images/logo/nodedotjs.svg' },
-  { key: 'mongodb', title: 'MongoDB', imgSrc: '../images/logo/mongodb.svg' },
-  { key: 'express', title: 'Express', imgSrc: '../images/logo/express.svg' },
-  { key: 'aws', title: 'AWS', imgSrc: 'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/aws/aws.png' }, // Update if AWS logo is downloaded
-  { key: 'html5', title: 'HTML5', imgSrc: '../images/logo/html5.svg' },
-  { key: 'css3', title: 'CSS3', imgSrc: '../images/logo/css3.svg' },
-  { key: 'git', title: 'Git', imgSrc: '../images/logo/git.svg' },
-  { key: 'jest', title: 'Jest', imgSrc: '../images/logo/jest.svg' }
+  { key: 'javascript', title: 'JavaScript', imgSrc: javascriptLogo },
+  { key: 'react', title: 'React', imgSrc: reactLogo },
+  { key: 'nodejs', title: 'Node.js', imgSrc: nodejsLogo },
+  { key: 'mongodb', title: 'MongoDB', imgSrc: mongodbLogo },
+  { key: 'express', title: 'Express', imgSrc: expressLogo },
+  { key: 'aws', title: 'AWS', imgSrc: awsLogo },
+  { key: 'html5', title: 'HTML5', imgSrc: html5Logo },
+  { key: 'css3', title: 'CSS3', imgSrc: css3Logo },
+  { key: 'git', title: 'Git', imgSrc: gitLogo },
+  { key: 'jest', title: 'Jest', imgSrc: jestLogo }
 ];
 
 const Skills = () => {
@@ -30,9 +41,7 @@ const Skills = () => {
       <div className="skills-container">
         <div className="slider">
           <div className="track">
-            {/* Repeat the icons twice for the infinite loop */}
-            {[...Array(2)].map((_, i) => (
-              <div className="icon-set" key={i}>
+              <div className="icon-set" >
                 {skillsData.map(({ key, title, imgSrc }) => (
                   <div className="skills-box" key={key} onClick={() => handleTogglePopup(key)}>
                     <div className="skills-title">
@@ -73,7 +82,6 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            ))}
           </div>
         </div>
       </div>

@@ -1,39 +1,67 @@
+.skills-section {
+    padding-top: 20px;
+    overflow: visible; /* Changed to visible to ensure no content is clipped */
+}
+
+.skills-header {
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+}
+
+.skills-header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #2ecc71;
+    border-radius: 2px;
+}
+
 .skills-container {
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .slider {
-    width: calc(200%); /* 100% for each set */
-    display: flex;
-  }
-  
-  .track {
-    display: flex;
-    animation: scroll 20s linear infinite;
-  }
-  
-  .icon-set {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-  }
-  
-  .skills-box {
-    padding: 10px;
-  }
-  
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Desktop layout */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 2rem;
+    padding: 1rem 80px;
+    font-size: 1.2rem;
+    overflow: visible; /* Ensure overflow is visible to allow all content to be seen */
+}
+
+@media screen and (max-width: 990px) {
+    .skills-section {
+        height: auto; /* Allow the section to grow as needed */
     }
-    to {
-      transform: translateX(-50%); /* Move to the left by half the total width */
+    .skills-container {
+        display: flex; /* Use flexbox for better control over columns */
+        flex-wrap: wrap; /* Allow container to wrap items */
+        padding: 1rem 20px; /* Reduced padding for more space */
     }
-  }
-  
-  .skills-icon {
-    width: 50px; /* Set a fixed width for icons */
-    height: auto;
-  }
-  
+    .slider, .track {
+        display: block; /* Change display to block to stack elements vertically */
+        width: 100%; /* Full width */
+        position: static; /* Adjust positioning */
+        animation: none; /* Disable animations */
+    }
+    .icon-set {
+        display: grid; /* Use grid to manage icon layout */
+        grid-template-columns: repeat(2, 1fr); /* Create two columns */
+        gap: 10px; /* Space between icons */
+        width: 100%; /* Ensure full width usage */
+    }
+    .skills-box {
+        width: 100%; /* Full width for each skill box */
+        margin-bottom: 10px; /* Space between skill boxes */
+    }
+    .skills-icons {
+        width: 40px; /* Adjust icon size */
+        margin-bottom: 5px; /* Space between icons */
+    }
+}
+
