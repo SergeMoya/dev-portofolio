@@ -1,128 +1,159 @@
-/* src/styles/Home.css */
-
 .homepage {
-  position: relative; /* Ensure the homepage can properly contain absolutely positioned children */
+  position: relative;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Adjust alignment if necessary */
-  justify-content: center;
-  background-image: url('../images/herobg.png'); /* Path to your background image */
-  background-size: cover; /* Cover the entire area of the homepage */
-  background-position: center; /* Center the background image */
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: 1fr auto;
+  background-color: #000;
   color: white;
-  text-align: left;
-  padding: 0 100px; /* Adjusted for uniformity */
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  overflow: hidden; /* Prevents scrollbars if content overflows */
-}
-
-.Canvas {
-  position: absolute; /* Make canvas a background layer */
-  top: 120px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Allows clicks to pass through to content layers if not interactive */
-}
-
-.content, .cardcontent {
-  position: relative; /* Ensure these layers are above the canvas */
-  z-index: 1; /* Higher than the canvas */
-  bottom: 50px;
-}
-
-.cardcontent {
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
+  overflow: hidden;
 }
 
 .content {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding: 5vh 5vw;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  width: 100%;
-  margin-top: 90px;
-}
-
-.text-content {
-  flex: 1;
-  padding-right: 20px;
+  z-index: 2;
 }
 
 .homepage h1 {
-  margin: 0px;
   font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 .homepage p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.text-content p {
-  transition: opacity 1s ease-in-out;
-}
-
-.text-content p.show {
+.homepage p.show {
   opacity: 1;
+  transform: translateY(0);
+}
+
+.Canvas {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  z-index: 1;
+  position: relative;
+}
+
+.interaction-hint {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.interaction-hint span {
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.hint-icon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.scroller {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 20px;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
-    .homepage {
-      padding-right: clamp(10px, 3%, 20px);
-      padding-left: clamp(10px, 3%, 20px);
-      align-items: center;
-    }
+  .homepage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 5vh 5vw;
+    text-align: center;
+  }
+  
+  .Canvas {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    height: 50vh;
+    width: 100%;
+  }
+  
+  .homepage h1 {
+    font-size: 2.5rem;
+  }
+  
+  .homepage p {
+    font-size: 1rem;
+  }
+  
+  .interaction-hint {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    padding: 12px 18px;
+  }
+  
+  .interaction-hint span {
+    font-size: 0.8rem;
+  }
+  
+  .scroller {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin-top: 20px;
+  }
+}
 
-    .Canvas {
-      top: 350px; /* Adjust top position */
-      height: 40vh; /* Smaller viewport height */
-    }
-
-    .cardcontent {
-      margin: 10px;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .content {
-      flex-direction: column;
-      margin-top: 30px;
-    }
-
-    .text-content {
-      padding-right: 0;
-      margin: 10px 0;
-    }
-
-    .homepage h1 {
-      font-size: 2.5rem;
-      margin: 0px;
-    }
-
-    .homepage p {
-      font-size: 1.2rem;
-    }
-
-    .typing {
-      animation: none;
-      border-right: 1px solid white;
-    }
-
-    .navbar {
-      display: flex;
-      color: black;
-      background-color: white;
-    }
-
-    .navbar.visible {
-      transform: translateY(0);
-      display: flex;
-      
-    }
+@media (max-width: 480px) {
+  .homepage h1 {
+    font-size: 2rem;
+  }
+  
+  .homepage p {
+    font-size: 0.9rem;
+  }
+  
+  .interaction-hint {
+    padding: 10px 14px;
+  }
+  
+  .interaction-hint span {
+    font-size: 0.7rem;
+  }
 }
