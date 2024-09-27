@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import '../styles/Skills.css';
+import { skillDescriptions } from './skillDescriptions';
+
 // Importing images
 import javascriptLogo from '../images/logo/javascript.svg';
 import reactLogo from '../images/logo/react.svg';
@@ -28,9 +30,69 @@ const skillsData = [
 
 const Skills = () => {
   const [visiblePopup, setVisiblePopup] = useState(null);
+  const [isAnimationPaused, setIsAnimationPaused] = useState(false);
+  const codeContainerRef = useRef(null);
+  const lineNumbersRef = useRef(null);
 
   const handleTogglePopup = (key) => {
-    setVisiblePopup(visiblePopup === key ? null : key);
+    const newVisiblePopup = visiblePopup === key ? null : key;
+    setVisiblePopup(newVisiblePopup);
+    setIsAnimationPaused(newVisiblePopup !== null);
+  };
+
+  const syncScroll = useCallback(() => {
+    if (lineNumbersRef.current && codeContainerRef.current) {
+      lineNumbersRef.current.scrollTop = codeContainerRef.current.scrollTop;
+    }
+  }, []);
+
+  useEffect(() => {
+    const currentCodeContainer = codeContainerRef.current;
+    if (currentCodeContainer) {
+      currentCodeContainer.addEventListener('scroll', syncScroll);
+      return () => currentCodeContainer.removeEventListener('scroll', syncScroll);
+    }
+  }, [syncScroll, visiblePopup]);
+
+  const renderCodeLine = (line, index, totalLines) => {
+    let className = "code-line";
+    let content = line;
+
+    if (line.startsWith('//')) {
+      className += " comment";
+      content = <span className="comment">{line}</span>;
+    } else if (line.startsWith('const')) {
+      const parts = line.split('=');
+      content = (
+        <>
+          <span className="keyword">const</span>
+          <span className="variable"> {parts[0].split(' ')[1]}</span>
+          <span className="operator"> = </span>
+          <span className="punctuation">[</span>
+        </>
+      );
+    } else if (line.trim().startsWith('"')) {
+      className += " indent-1";
+      content = (
+        <>
+          <span className="string">"{line.trim().slice(1, -2)}"</span>
+          <span className="punctuation">,</span>
+        </>
+      );
+    } else if (line.trim() === '];') {
+      content = <span className="punctuation">{line.trim()}</span>;
+    } else if (index === totalLines - 1) {
+      // Special handling for the last line (closing brace)
+      content = <span className="punctuation">{line.trim()}</span>;
+    }
+
+    return <div key={index} className={className}>{content}</div>;
+  };
+
+  const renderLineNumbers = (codeLines) => {
+    return codeLines.map((_, index) => (
+      <div key={index}>{index + 1}</div>
+    ));
   };
 
   return (
@@ -39,49 +101,43 @@ const Skills = () => {
         <h1>Acare Technology</h1>
       </div>
       <div className="skills-container">
-        <div className="slider">
+        <div className={`slider ${isAnimationPaused ? 'paused' : ''}`}>
           <div className="track">
-              <div className="icon-set" >
-                {skillsData.map(({ key, title, imgSrc }) => (
-                  <div className="skills-box" key={key} onClick={() => handleTogglePopup(key)}>
-                    <div className="skills-title">
-                      <div className="skills-img">
-                        <img src={imgSrc} alt={`${title} Logo`} className="skills-icons" />
-                        {visiblePopup === key && (
-                          <div className="popup">
-                            <div className="editor-window">
-                              <div className="window-controls">
-                                <span className="control close"></span>
-                                <span className="control minimize"></span>
-                                <span className="control expand"></span>
+            <div className="icon-set">
+              {skillsData.map(({ key, title, imgSrc }) => (
+                <div className="skills-box" key={key} onClick={() => handleTogglePopup(key)}>
+                  <div className="skills-title">
+                    <div className="skills-img">
+                      <img src={imgSrc} alt={`${title} Logo`} className="skills-icons" />
+                      {visiblePopup === key && (
+                        <div className="popup">
+                          <div className="editor-window">
+                            <div className="window-controls">
+                              <span className="control close"></span>
+                              <span className="control minimize"></span>
+                              <span className="control expand"></span>
+                            </div>
+                            <div className="editor-content">
+                              <div className="line-numbers" ref={lineNumbersRef}>
+                                {renderLineNumbers(skillDescriptions[key])}
                               </div>
-                              <div className="editor-container">
-                                <div className="line-numbers">
-                                  {Array.from({ length: 5 }).map((_, index) => (
-                                    <span key={index} style={{ display: 'block' }}>{index + 1}</span>
-                                  ))}
-                                </div>
-                                <div className="code-container">
-                                  {[
-                                    `<span style="color: #dcdcdc;">const</span> <span style="color: #9cdcfe;">developerInfo</span> = {`,
-                                    `<div class="indent-1"><span style="color: #dcdcdc;">keyProjects:</span> <span style="color: #ce9178;">'Dashboard App',</span></div>`,
-                                    `<div class="indent-1"><span style="color: #dcdcdc;">techSkills:</span> <span style="color: #ce9178;">'React, Node.js',</span></div>`,
-                                    `<div class="indent-1"><span style="color: #dcdcdc;">certifications:</span> <span style="color: #ce9178;">'Advanced JavaScript Course'</span></div>`,
-                                    `};`
-                                  ].map((line, index) => (
-                                    <div key={index} className="code-block" dangerouslySetInnerHTML={{ __html: line }}></div>
-                                  ))}
+                              <div className="code-container" ref={codeContainerRef}>
+                                <div className="code-content">
+                                  {skillDescriptions[key].map((line, index) => 
+                                    renderCodeLine(line, index, skillDescriptions[key].length)
+                                  )}
                                 </div>
                               </div>
                             </div>
                           </div>
-                        )}
-                      </div>
-                      <h3>{title}</h3>
+                        </div>
+                      )}
                     </div>
+                    <h3>{title}</h3>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
