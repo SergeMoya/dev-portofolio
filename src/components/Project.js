@@ -12,7 +12,7 @@ const projects = [
     description: "A cloud-based solution for analyzing and visualizing medical data in real-time, utilizing advanced AI algorithms.",
     technologies: ["React", "Node.js", "MongoDB", "AWS"],
     image: Image1,
-    link: "#"
+    link: "https://play.google.com/store/apps/details?id=com.acarepulseoximetereapp&hl=en-US&ah=A7FWPNVKIwsv8-xQXW9U-bADgIE"
   },
   {
     title: "Pulse Oximeter Full Stack Application",
