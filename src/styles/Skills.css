@@ -37,6 +37,7 @@
 .skills-box {
   position: relative;
   z-index: 2;
+  padding: 0 20px;
 }
 
 .skills-box:hover {
@@ -97,7 +98,7 @@
 
 .slider {
   display: flex;
-  width: 200%;
+  width: 100%;
   position: relative;
 }
 
@@ -127,6 +128,7 @@
   flex: 1;
   justify-content: space-around;
   margin-right: 30px;
+  gap: 100px; /* Add this line to create space between icons */
 }
 
 @keyframes scroll {
@@ -134,7 +136,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 20px));
   }
 }
 
@@ -210,7 +212,7 @@
   bottom: 0;
   width: 40px;
   padding: 10px 0;
-  text-align: center;  /* Changed from right to center */
+  text-align: center; 
   color: #858585;
   user-select: none;
   border-right: 1px solid #404040;

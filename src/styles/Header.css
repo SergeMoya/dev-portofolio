@@ -1,9 +1,34 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
 
-/* Global styles */
+:root {
+    --primary-color: #1565C0;
+    --text-color: #a59797;
+    --bg-color: #050816;
+    --menu-bg: rgba(255, 255, 255, 0.758);
+}
+
+body.dark-mode {
+    --primary-color: #64B5F6;
+    --text-color: #f5f5f5;
+    --bg-color: #121212;
+    --menu-bg: rgba(18, 18, 18, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
 .hamburger-checkbox {
-    display: none; /* Ensure checkbox is always hidden */
+    display: none;
 }
 
 .header {
@@ -11,66 +36,61 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    /*background: linear-gradient(to right, #243B55, #141E30);*/
-    background:#050816;
+    background-color: var(--bg-color);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden; /* Needed to contain the pseudo-element within the header */
-}
-
-.header::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    height: 2px;
-    background: #FFFFFF; /* White underline */
-    transition: all 0.3s ease;
-}
-
-.header:hover::after {
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0; /* Expands the underline across the full width on hover */
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
 }
 
 .logo {
     font-family: 'Montserrat', sans-serif;
-    font-size: calc(1.4vw + 10px); /* Responsive font size calculation */
-    color: #FFFFFF;
-    cursor: pointer; /* Indicates the logo is clickable */
+    font-size: calc(1.4vw + 10px);
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
 .navbar {
     display: flex;
     list-style: none;
+    bottom: 10px;
 }
 
 .navbar button {
     background: none;
     border: none;
-    text-decoration: none;
-    color: #FFFFFF;
+    color: var(--text-color);
     margin-left: 20px;
     padding: 10px 15px;
     font-family: 'Roboto', sans-serif;
-    font-size: calc(0.8vw + 6px); /* Responsive font size */
+    font-size: calc(0.8vw + 6px);
     transition: color 0.3s, background-color 0.3s;
-    cursor: pointer; /* Indicates the buttons are clickable */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .navbar button:hover, .navbar button.active {
-    background-color: #1565C0; /* A lighter blue for active/hover states */
+    background-color: var(--primary-color);
+    color: #FFFFFF;
     border-radius: 5px;
 }
 
+.navbar button .icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
 .menu-icon {
-    display: none; /* Hidden by default */
+    display: none;
     cursor: pointer;
-    flex-direction: column; /* Aligns the bars vertically */
-    justify-content: space-around; /* Spaces the bars evenly */
-    height: 25px; /* Total height of the hamburger icon */
-    width: 35px; /* Width of the hamburger icon */
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 35px;
     align-items: center;
 }
 
@@ -78,88 +98,97 @@
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #FFFFFF; /* Color of the bars */
+    background-color: var(--text-color);
     border-radius: 2px;
+    transition: all 0.3s linear;
 }
 
-/* Responsive design for Tablet screens with Hamburger menu */
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
 @media (max-width: 768px) {
-    .header::after {
-        background: none;
+    .header {
+        padding: 15px 20px;
     }
     
     .logo {
-        font-size: calc(2.5vw + 12px); /* Slightly larger for visibility on small devices */
-        flex-grow: 1;
-        text-align: left;
+        font-size: calc(2.5vw + 12px);
     }
     
     .menu-icon {
-        display: block;
+        display: flex;
+        z-index: 1000;
     }
-
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: #cdcdcd;
-    }
-
+  
     .navbar {
         position: fixed;
-        width: calc(100vw - 85px);
+        width: 100%;
+        height: 100vh;
         top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #5D6D7E;
+        right: -100%;
+        background: var(--menu-bg);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        color: white;
-        font-size: calc(2vw + 12px); /* Responsive font size */
-        font-weight: bold;
+        transition: right 0.3s ease-in-out;
+        backdrop-filter: blur(10px);
+        z-index: 999;
     }
-
+  
     .navbar button {
-        background: none;
-        border: none;
-        color: inherit;
-        font: inherit;
-        cursor: pointer;
-        padding: 20px;
-        margin: 0 5px;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        margin: 5px 0;
+        font-size: calc(2vw + 12px);
     }
-
+  
     .navbar.open {
-        transform: translateX(0);
+        right: 0;
     }
 
-    .navbar button.active {
-        color: tomato;
+    body {
+        overflow-x: hidden;
+    }
+  
+    .hamburger-checkbox:checked ~ .navbar {
+        right: 0;
+    }
+  
+    .hamburger-checkbox:checked ~ .menu-icon .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .hamburger-checkbox:checked ~ .menu-icon .bar:nth-child(2) {
+        opacity: 0;
+    }
+  
+    .hamburger-checkbox:checked ~ .menu-icon .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 }
 
-/* Very small devices (less than 480px) */
 @media (max-width: 480px) {
     .header {
-        padding: 10px 20px; /* Reduce padding */
+        padding: 10px 20px;
     }
 
     .logo {
-        font-size: calc(4vw + 6px); /* Even larger font size for very small screens */
+        font-size: calc(4vw + 6px);
     }
 
-    .menu-icon .bar {
-        width: 90%; /* Full width of icon for better visibility */
-    }
-
-    .navbar {
-        font-size: calc(3vw + 10px); /* Adjust font size for readability */
-        width: calc(100vw - 65px);
+    .navbar button {
+        font-size: calc(3vw + 10px);
     }
 }
