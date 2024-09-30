@@ -5,6 +5,9 @@ import '../styles/Project.css';
 import Image1 from '../images/Project1.png';
 import Image2 from '../images/Project2.png';
 import Image3 from '../images/Project3.png';
+import Project1PDF from '../pdf-project/Project1.pdf';
+import Project2PDF from '../pdf-project/Project2.pdf';
+import Project3PDF from '../pdf-project/Project3.pdf';
 
 const projects = [
   {
@@ -12,21 +15,24 @@ const projects = [
     description: "A cloud-based solution for analyzing and visualizing medical data in real-time, utilizing advanced AI algorithms.",
     technologies: ["React", "Node.js", "MongoDB", "AWS"],
     image: Image1,
-    link: "https://play.google.com/store/apps/details?id=com.acarepulseoximetereapp&hl=en-US&ah=A7FWPNVKIwsv8-xQXW9U-bADgIE"
+    link: "https://play.google.com/store/apps/details?id=com.acarepulseoximetereapp&hl=en-US&ah=A7FWPNVKIwsv8-xQXW9U-bADgIE",
+    learnMore: Project1PDF
   },
   {
     title: "Pulse Oximeter Full Stack Application",
     description: "A medical platform designed to handle millions of transactions securely with real-time data processing.",
     technologies: ["Angular", "Express", "MySQL", "Azure"],
     image: Image2,
-    link: "#"
+    link: "#",
+    learnMore: Project2PDF
   },
   {
     title: "Real-Time Heart Rate Analytics App",
     description: "A dynamic application providing real-time heart rate analytics using WebSocket for live data updates.",
     technologies: ["Vue.js", "Flask", "PostgreSQL", "Google Cloud"],
     image: Image3,
-    link: "#"
+    link: "#",
+    learnMore: Project3PDF
   }
 ];
 
@@ -36,6 +42,12 @@ const fadeIn = {
 };
 
 const Project = () => {
+  const handleLearnMore = (pdfPath) => {
+    if (pdfPath && pdfPath !== "#") {
+      window.open(pdfPath, '_blank');
+    }
+  };
+
   return (
     <div className="projects-container">
       {projects.map((project, index) => (
@@ -53,7 +65,10 @@ const Project = () => {
               <ul className="technologies">
                 {project.technologies.map(tech => <li key={tech}>{tech}</li>)}
               </ul>
-              <a href={project.link} className="project-link">View Project</a>
+              <div className="button-container">
+                <a href={project.link} className="project-button" target="_blank" rel="noopener noreferrer">View Project</a>
+                <button onClick={() => handleLearnMore(project.learnMore)} className="project-button learn-more">Learn More</button>
+              </div>
             </div>
           </motion.div>
         </Tilt>
