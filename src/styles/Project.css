@@ -1,33 +1,40 @@
 .projects-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; /* Ensures even spacing on all sides */
+  justify-content: space-around;
   padding: 100px;
   margin: auto;
+  align-items: stretch; 
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 0 0 30%; /* Flex-grow, flex-shrink and flex-basis set for adaptive sizing */
+  flex: 1 0 30%; 
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   margin: 10px;
   transition: transform 0.3s ease;
+  min-width: 420px;
+  max-width: 450px;
+  height: 100%; 
 }
 
 .project-image {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ensures the image covers the allocated space without distortion */
+  object-fit: cover;
 }
 
 .project-info {
   padding: 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
 }
 
 .project-info h3, .project-info p {
@@ -39,7 +46,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers technology tags within the card */
+  justify-content: center;
   gap: 10px;
 }
 
@@ -65,32 +72,11 @@
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-@media (max-width: 900px) {
-  .projects-container {
-    flex-direction: column;
-    justify-content: center; /* Centers cards in the container */
-    padding: 10px;
-    text-align: center;
-    margin-right: 20px;
-    
-  }
-  .project-card {
-    align-items: center;
-    width: 100%; /* Cards take up almost full width for better readability */
-  }
-
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  }
-
-}
-
 .button-container {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: auto; 
 }
 
 .project-button {
@@ -115,15 +101,29 @@
   background: #218838;
 }
 
+@media (max-width: 900px) {
+  .projects-container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    margin-right: 20px;
+  }
+  .project-card {
+    align-items: center;
+    width: 100%;
+    min-width: unset; 
+  }
+}
+
 @media (max-width: 400px) {
   .project-card {
-    width: 100%; /* Full width for very small devices */
+    width: 100%;
     flex-direction: column;
   }
   .technologies li {
-    font-size: 12px; /* Smaller font size for technology tags */
+    font-size: 12px;
   }
-
   .project-button {
     width: 100%;
     text-align: center;
