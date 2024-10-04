@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Train from '../canvas/TrainScene';
+import ComputerScene from '../canvas/Computer_desktop';
 import MouseScroll from '../utilities/MouseScroll';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MousePointer } from 'lucide-react';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -47,21 +46,21 @@ const Home = () => {
         </motion.p>
       </div>
       <div className="Canvas">
-        <Train />
-        <AnimatePresence>
-          {showHint && (
-            <motion.div 
-              className="interaction-hint"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span>Click and move your cursor around the image to interact with the 3D scene</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <ComputerScene />
       </div>
+      <AnimatePresence>
+        {showHint && (
+          <motion.div 
+            className="interaction-hint"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span>Click and move your cursor around the image to interact with the 3D scene</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="scroller">
         <MouseScroll onScroll={goToProjects} />
       </div>
