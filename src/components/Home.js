@@ -18,7 +18,7 @@ const Home = () => {
     }
 
     // Hide the hint after 5 seconds
-    const timer = setTimeout(() => setShowHint(false), 5000);
+    const timer = setTimeout(() => setShowHint(false), 3000);
     return () => clearTimeout(timer);
   }, [text]);
 
