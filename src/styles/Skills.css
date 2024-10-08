@@ -1,6 +1,7 @@
 .skills-section {
   position: relative;
   z-index: 1;
+  background-color: #090b20; 
 }
 
 .skills-header {

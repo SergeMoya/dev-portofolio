@@ -29,9 +29,9 @@ const Header = () => {
     const menuItems = [
         { id: 'home', label: 'Home' },
         { id: 'skills', label: 'AcareOx'},
+        { id: 'projects', label: 'Project' },
         { id: 'experience', label: 'Production'},
         { id: 'about-me', label: 'About me' },
-        { id: 'projects', label: 'Project' },
         { id: 'contact', label: 'Contact'},
     ];
 
