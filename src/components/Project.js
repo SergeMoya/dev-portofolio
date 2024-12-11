@@ -23,7 +23,7 @@ const projects = [
     description: "A medical platform designed to handle millions of transactions securely with real-time data processing.",
     technologies: ["Angular", "Express", "MySQL", "Azure"],
     image: Image2,
-    link: "#",
+    link: "https://defi-dashboard-gold.vercel.app/",
     learnMore: Project2PDF
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     description: "A dynamic application providing real-time heart rate analytics using WebSocket for live data updates.",
     technologies: ["Vue.js", "Flask", "PostgreSQL", "Google Cloud"],
     image: Image3,
-    link: "#",
+    link: "https://hft-system.vercel.app/",
     learnMore: Project3PDF
   }
 ];
