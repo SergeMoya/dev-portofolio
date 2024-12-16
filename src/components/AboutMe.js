@@ -1,14 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
-import aboutImage from '../images/art2.jpg';  // Make sure this is Picture 1
-import profileImage from '../images/acare_profile.png';  // This is Picture 2
+import aboutImage from '../images/art2.jpg';
 
 const Main = styled.main`
   padding: 2rem;
-  /*background: linear-gradient(to right, #243B55, #141E30);*/
-  background:#090b20;
+  background: #090b20;
 `;
 
 const Grid = styled.div`
@@ -50,8 +46,8 @@ const Column = styled.div`
 
 const ImageContainer = styled.div`
   img {
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
   }
 `;
@@ -59,8 +55,20 @@ const ImageContainer = styled.div`
 const TextContainer = styled.div`
   padding: 1rem;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: justify;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    margin-bottom: 2rem !important;
+  }
+
+  p {
+    margin-bottom: 2rem !important;
+  }
 
   @media (max-width: 600px) {
     font-size: 0.8rem;
@@ -71,112 +79,30 @@ const TextContainer = styled.div`
   }
 `;
 
-const SocialMediaContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  background-color: #141E30;
-  margin-top: 2rem;
-`;
-
-const SocialIcon = styled.a`
-  color: #ffffff;
-  margin: 0 1rem;
-  font-size: 2rem;
-  position: relative;
-  display: inline-block;
-
-  &:hover {
-    color: #1da1f2; // Or any color you prefer
-  }
-
-  &:hover span {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-const Tooltip = styled.span`
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%; /* Position the tooltip above the icon */
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size:0.75rem;
-
-  /* Arrow */
-  &::after {
-    content: "";
-    position: absolute;
-    top: 100%; /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-`;
-
 const AboutMe = () => {
   return (
-    <>
-      <Main>
-        <Grid>
-          <Row>
-            <Column>
-              <TextContainer>
-                <h1>About Us</h1>
-                <p>With Acare App, you can easily connect to our company's pulse oximeter and view your real-time measurement.</p>
-              </TextContainer>
-            </Column>
-            <Column>
-              <ImageContainer>
-                <img src={aboutImage} alt="About Me" />
-              </ImageContainer>
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <TextContainer>
-                <p>Detailed information about the application features, user benefits, and more technical insights.</p>
-              </TextContainer>
-            </Column>
-            <Column>
-              <ImageContainer>
-                <img src={profileImage} alt="Acare Profile" />
-              </ImageContainer>
-            </Column>
-          </Row>
-          <SocialMediaContainer>
-            <SocialIcon href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">
-              <FontAwesomeIcon icon={faGithub} />
-              <Tooltip>GitHub</Tooltip>
-            </SocialIcon>
-            <SocialIcon href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} />
-              <Tooltip>LinkedIn</Tooltip>
-            </SocialIcon>
-            <SocialIcon href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} />
-              <Tooltip>Instagram</Tooltip>
-            </SocialIcon>
-            <SocialIcon href="https://scholar.google.com/citations?user=yourprofile" target="_blank" aria-label="Google Scholar">
-              <FontAwesomeIcon icon={faGoogleScholar} />
-              <Tooltip>Google Scholar</Tooltip>
-            </SocialIcon>
-          </SocialMediaContainer>
-        </Grid>
-      </Main>
-    </>
+    <Main>
+      <Grid>
+        <Row>
+          <Column>
+            <TextContainer>
+              <h1 style={{ color: '#4A90E2' }}>About Me</h1>
+              <p style={{ lineHeight: '1.8' }}>
+                Full Stack Developer crafting scalable solutions in mobile health, blockchain, and AI. Built a BLE-enabled health monitoring app, DeFi portfolio systems, and ML-driven malaria prevention analytics for Africa.
+              </p>
+              <p style={{ lineHeight: '1.8' }}>
+                Tech stack: React Native, React.js, Node.js, Machine Learning. Always eager to tackle new challenges with emerging technologies.
+              </p>
+            </TextContainer>
+          </Column>
+          <Column>
+            <ImageContainer>
+              <img src={aboutImage} alt="About Me" />
+            </ImageContainer>
+          </Column>
+        </Row>
+      </Grid>
+    </Main>
   );
 }
 

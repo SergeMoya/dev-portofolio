@@ -2,13 +2,59 @@ import React, { useState, useEffect } from 'react';
 import ComputerScene from '../canvas/Computer_desktop';
 import MouseScroll from '../utilities/MouseScroll';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faInstagram, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
 import '../styles/Home.css';
+
+const SocialMediaContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  background-color: transparent;
+`;
+
+const SocialIcon = styled.a`
+  color: #ffffff;
+  margin: 0 1.5rem;
+  font-size: 3rem;
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    color: #1da1f2;
+  }
+
+  &:hover span {
+    visibility: visible;
+    opacity: 1;
+  }
+`;
+
+const Tooltip = styled.span`
+  visibility: hidden;
+  width: auto-fit;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 1;
+  font-size: 1.5rem;
+  bottom: 125%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+`;
 
 const Home = () => {
   const [text, setText] = useState('');
   const [showParagraph, setShowParagraph] = useState(false);
   const [showHint, setShowHint] = useState(true);
-  const fullText = "Hello! This is Acare";
+  const fullText = "Hello, this is Serge !";
 
   useEffect(() => {
     if (text.length < fullText.length) {
@@ -39,11 +85,26 @@ const Home = () => {
           animate={{ opacity: showParagraph ? 1 : 0, y: showParagraph ? 0 : 20 }}
           transition={{ duration: 0.5 }}
         >
-          Welcome to AcareOx, the app that helps you track your lifestyle.
-          We are committed to monitoring your sleep management. With Acare
-          App, you can easily connect to our company's pulse oximeter and
-          view your real-time measurement.
+          Full Stack Engineer with a Ph.D. in Electrical Engineering, bridging advanced technology and practical innovation. Architected multiple groundbreaking solutions: from launching a medical device company's first IoT platform to building sophisticated DeFi and algorithmic trading systems. Passionate about transforming complex technical challenges into scalable, market-ready products — whether in Web3, healthcare tech, or AI/ML domains.
         </motion.p>
+        <SocialMediaContainer>
+          <SocialIcon href="https://github.com/SergeMoya" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub} />
+            <Tooltip>GitHub</Tooltip>
+          </SocialIcon>
+          <SocialIcon href="https://www.linkedin.com/in/sergeizida" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLinkedin} />
+            <Tooltip>LinkedIn</Tooltip>
+          </SocialIcon>
+          <SocialIcon href="https://www.instagram.com/acare0618/" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faInstagram} />
+            <Tooltip>Instagram</Tooltip>
+          </SocialIcon>
+          <SocialIcon href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=serge+ismael+zida&oq=serge" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGoogleScholar} />
+            <Tooltip>Google Scholar</Tooltip>
+          </SocialIcon>
+        </SocialMediaContainer>
       </div>
       <div className="Canvas">
         <ComputerScene />
@@ -61,6 +122,7 @@ const Home = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <div className="scroller">
         <MouseScroll onScroll={goToProjects} />
       </div>
