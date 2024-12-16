@@ -28,10 +28,10 @@ const Header = () => {
 
     const menuItems = [
         { id: 'home', label: 'Home' },
-        { id: 'skills', label: 'AcareOx'},
-        { id: 'projects', label: 'Project' },
-        { id: 'experience', label: 'Production'},
+        { id: 'skills', label: 'Skills'},
         { id: 'about-me', label: 'About me' },
+        { id: 'experience', label: 'Experience' },
+        { id: 'projects', label: 'Project' },
         { id: 'contact', label: 'Contact'},
     ];
 
@@ -41,7 +41,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <h1 className="logo" onClick={() => scrollTo('home')}>Acare Technology Co</h1>
+            <h1 className="logo" onClick={() => scrollTo('home')}>Serge Zida</h1>
             <input
                 id="hamburger-toggle"
                 type="checkbox"

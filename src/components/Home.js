@@ -8,7 +8,7 @@ const Home = () => {
   const [text, setText] = useState('');
   const [showParagraph, setShowParagraph] = useState(false);
   const [showHint, setShowHint] = useState(true);
-  const fullText = "Hello! This is Acare";
+  const fullText = "Hello, this is Serge !";
 
   useEffect(() => {
     if (text.length < fullText.length) {
@@ -39,10 +39,7 @@ const Home = () => {
           animate={{ opacity: showParagraph ? 1 : 0, y: showParagraph ? 0 : 20 }}
           transition={{ duration: 0.5 }}
         >
-          Welcome to AcareOx, the app that helps you track your lifestyle.
-          We are committed to monitoring your sleep management. With Acare
-          App, you can easily connect to our company's pulse oximeter and
-          view your real-time measurement.
+          Senior Full Stack Engineer with a Ph.D. in Electrical Engineering, bridging advanced technology and practical innovation. Architected multiple groundbreaking solutions: from launching a medical device company's first IoT platform to building sophisticated DeFi and algorithmic trading systems. Passionate about transforming complex technical challenges into scalable, market-ready products — whether in Web3, healthcare tech, or AI/ML domains.
         </motion.p>
       </div>
       <div className="Canvas">

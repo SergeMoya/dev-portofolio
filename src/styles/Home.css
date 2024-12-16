@@ -43,34 +43,35 @@
 .content {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  padding: 5vh 5vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 2;
-  padding-top: 15vh;
-  position: relative;
-  padding-left: 15vw; /* Add this line to push content to the right */
-  
+  padding: 15vh 0 5vh 17vw;
+  width: 110%; /* Change from max-width: max-content */
 }
 
 .homepage h1 {
   font-size: 3.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-weight: 700;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  line-height: 1.2;
 }
 
 .homepage p {
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.8; /* Reduced from 1.8 for better readability */
   margin-bottom: 2rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   color: #ffffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  max-width: 600px; /* Fixed width instead of percentage */
 }
 
 .homepage p.show {
