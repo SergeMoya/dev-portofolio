@@ -6,6 +6,30 @@ const Header = () => {
     const [activeSection, setActiveSection] = useState('home');
 
     useEffect(() => {
+        const options = {
+            root: null,
+            rootMargin: '-50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        }, options);
+
+        // Observe all sections
+        const sections = document.querySelectorAll('#home, #skills, #about-me, #experience, #projects');
+        sections.forEach(section => observer.observe(section));
+
+        return () => {
+            sections.forEach(section => observer.unobserve(section));
+        };
+    }, []);
+
+    useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -31,8 +55,8 @@ const Header = () => {
         { id: 'skills', label: 'Skills'},
         { id: 'about-me', label: 'About me' },
         { id: 'experience', label: 'Experience' },
-        { id: 'projects', label: 'Project' },
-        { id: 'contact', label: 'Contact'},
+        { id: 'projects', label: 'Projects' },
+        /*{ id: 'contact', label: 'Contact'},*/
     ];
 
     const toggleMenu = () => {

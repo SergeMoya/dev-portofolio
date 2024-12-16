@@ -98,7 +98,7 @@ const Skills = () => {
   return (
     <div className="skills-section">
       <div className="skills-header">
-        <h1>Acare Technology</h1>
+        <h1>Skills Overview</h1>
       </div>
       <div className={`slider ${isAnimationPaused ? 'paused' : ''}`}>
         <div className="track">
