@@ -49,31 +49,34 @@ const Project = () => {
   };
 
   return (
-    <div className="projects-container">
-      {projects.map((project, index) => (
-        <Tilt className="Tilt" options={{ max: 25, scale: 1.05 }} key={index}>
-          <motion.div 
-            className="project-card"
-            variants={fadeIn}
-            initial="hidden"
-            animate="show"
-          >
-            <img src={project.image} alt={project.title} className="project-image" />
-            <div className="project-info">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <ul className="technologies">
-                {project.technologies.map(tech => <li key={tech}>{tech}</li>)}
-              </ul>
-              <div className="button-container">
-                <a href={project.link} className="project-button" target="_blank" rel="noopener noreferrer">View Project</a>
-                <button onClick={() => handleLearnMore(project.learnMore)} className="project-button learn-more">Learn More</button>
+    <>
+      <h2 className="projects-title">Selected Projects</h2>
+      <div className="projects-container">
+        {projects.map((project, index) => (
+          <Tilt className="Tilt" options={{ max: 25, scale: 1.05 }} key={index}>
+            <motion.div 
+              className="project-card"
+              variants={fadeIn}
+              initial="hidden"
+              animate="show"
+            >
+              <img src={project.image} alt={project.title} className="project-image" />
+              <div className="project-info">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <ul className="technologies">
+                  {project.technologies.map(tech => <li key={tech}>{tech}</li>)}
+                </ul>
+                <div className="button-container">
+                  <a href={project.link} className="project-button" target="_blank" rel="noopener noreferrer">View Project</a>
+                  {/*<button onClick={() => handleLearnMore(project.learnMore)} className="project-button learn-more">Learn More</button>*/}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </Tilt>
-      ))}
-    </div>
+            </motion.div>
+          </Tilt>
+        ))}
+      </div>
+    </>
   );
 };
 
