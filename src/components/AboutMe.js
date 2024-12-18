@@ -60,10 +60,11 @@ const TextContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 
   h1 {
     margin-bottom: 2rem !important;
+    color: 'white';
   }
 
   p {
@@ -86,11 +87,11 @@ const AboutMe = () => {
         <Row>
           <Column>
             <TextContainer>
-              <h1 style={{ color: '#4A90E2' }}>About Me</h1>
-              <p style={{ lineHeight: '1.8' }}>
+              <h1 style={{ color: '#fff' }}>About Me</h1>
+              <p style={{ lineHeight: '1.8', color: 'gray' }}>
                 Full Stack Developer crafting scalable solutions in mobile health, blockchain, and AI. Built a BLE-enabled health monitoring app, DeFi portfolio systems, and ML-driven malaria prevention analytics for Africa.
               </p>
-              <p style={{ lineHeight: '1.8' }}>
+              <p style={{ lineHeight: '1.8', color: 'gray' }}>
                 Tech stack: React Native, React.js, Node.js, Machine Learning. Always eager to tackle new challenges with emerging technologies.
               </p>
             </TextContainer>
