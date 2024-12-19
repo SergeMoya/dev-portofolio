@@ -309,31 +309,34 @@
   }
 
   .skills-section {
-      height: auto; 
+    height: auto; 
   } 
-  .skills-container {
-      grid-template-columns: repeat(1, 1fr);  
-      padding: 1rem 20px;  
+
+  .slider {
+    width: 100%;
+    display: block;
   }
-  .skills-box {
-      width: 100%;  
-      margin-bottom: 10px;  
-      display: flex;  
-      justify-content: center;  
+
+  .track {
+    width: 100%;
+    display: block;
+    position: static;
+    animation: none;
   }
-  .slider, .track {
-      width: 100%;  
-      display: block;  
-      position: static;  
-      animation: none;  
-  }
+
   .icon-set {
-      display: grid;  
-      grid-template-columns: repeat(1, 1fr);  
-      gap: 10px;  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
   }
+
+  .icon-set:nth-child(2) {
+    display: none;
+  }
+
   .skills-icons {
-      width: 40px;  
-      margin-bottom: 5px; 
+    width: 40px;
+    margin-bottom: 5px; 
   }
 }
