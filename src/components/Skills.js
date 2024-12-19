@@ -39,12 +39,15 @@ const Skills = () => {
     setVisiblePopup(newVisiblePopup);
     setIsAnimationPaused(newVisiblePopup !== null);
     
-    // Add or remove class to prevent background scroll
-    const skillsSection = document.querySelector('.skills-section');
+    // Remove active class from all skills boxes
+    document.querySelectorAll('.skills-box').forEach(box => {
+      box.classList.remove('active');
+    });
+
+    // Add active class to clicked skills box
     if (newVisiblePopup) {
-      skillsSection.classList.add('popup-open');
-    } else {
-      skillsSection.classList.remove('popup-open');
+      const activeBox = document.querySelector(`.skills-box[data-key="${key}"]`);
+      if (activeBox) activeBox.classList.add('active');
     }
   };
 
@@ -114,6 +117,7 @@ const Skills = () => {
             {skillsData.map((skill) => (
               <div
                 key={skill.key}
+                data-key={skill.key}
                 className="skills-box"
                 onClick={() => handleTogglePopup(skill.key)}
               >

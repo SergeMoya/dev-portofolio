@@ -303,7 +303,8 @@
     max-width: 90vw;
     max-height: 250px;
     margin-top: 10px;
-    z-index: 1000;
+    z-index: 1001;
+    isolation: isolate;
   }
 
   /* Handle left edge cases */
@@ -346,6 +347,11 @@
 
   .skills-box {
     position: relative;
+    z-index: 2;
+  }
+
+  .skills-box.active {
+    z-index: 1000;
   }
 
   .skills-section.popup-open {
@@ -358,8 +364,10 @@
   }
 
   .skills-section {
-    height: auto; 
-  } 
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
 
   .slider {
     width: 100%;
