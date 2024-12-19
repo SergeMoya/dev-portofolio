@@ -4,6 +4,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import '../styles/Experience.css';
 import { FaLaptopCode } from 'react-icons/fa'; 
 import { IoSchool } from "react-icons/io5";
+import SectionHeader from './common/SectionHeader';
 
 // Safely parse environment variables with fallback to empty arrays
 const parseEnvData = (envVar) => {
@@ -32,9 +33,11 @@ const Experience = () => {
   if (workExperiences.length === 0 && educationExperiences.length === 0) {
     console.log('No experiences found'); // Debug log
     return (
-      <div className="section-title">
-        <h2>Experience data is currently being configured.</h2>
-        <p>Environment Variables Status:</p>
+      <div>
+        <SectionHeader>
+          <h1>Experience</h1>
+        </SectionHeader>
+        <p>Experience data is currently being configured.</p>
         <pre style={{textAlign: 'left', margin: '20px', padding: '10px', background: '#f5f5f5'}}>
           {JSON.stringify({
             work: process.env.REACT_APP_WORK_EXPERIENCE ? 'Present' : 'Missing',
@@ -49,7 +52,9 @@ const Experience = () => {
     <div>
       {workExperiences.length > 0 && (
         <>
-          <h2 className="section-title">Work Experience</h2>
+          <SectionHeader>
+            <h1>Work Experience</h1>
+          </SectionHeader>
           <VerticalTimeline>
             {workExperiences.map((exp, index) => (
               <VerticalTimelineElement
@@ -69,7 +74,9 @@ const Experience = () => {
 
       {educationExperiences.length > 0 && (
         <>
-          <h2 className="section-title">Education</h2>
+          <SectionHeader>
+            <h1>Education</h1>
+          </SectionHeader>
           <VerticalTimeline>
             {educationExperiences.map((edu, index) => (
               <VerticalTimelineElement

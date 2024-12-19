@@ -2,6 +2,7 @@ import React from 'react';
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import '../styles/Project.css';
+import SectionHeader from './common/SectionHeader';
 import Image1 from '../images/Project1.png';
 import Image2 from '../images/Project2.png';
 import Image3 from '../images/Project3.png';
@@ -50,7 +51,9 @@ const Project = () => {
 
   return (
     <>
-      <h2 className="projects-title">Selected Projects</h2>
+      <SectionHeader>
+        <h1>Selected Projects</h1>
+      </SectionHeader>
       <div className="projects-container">
         {projects.map((project, index) => (
           <Tilt className="Tilt" options={{ max: 25, scale: 1.05 }} key={index}>

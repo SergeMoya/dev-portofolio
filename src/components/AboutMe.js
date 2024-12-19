@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import aboutImage from '../images/art2.jpg';
+import SectionHeader from './common/SectionHeader';
 
 const Main = styled.main`
   padding: 4rem 2rem;
@@ -49,13 +50,6 @@ const ImageContainer = styled.div`
 const TextContainer = styled.div`
   color: #ffffff;
   
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-    font-weight: 700;
-  }
-
   .description {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -77,10 +71,6 @@ const TextContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
-    
     .description, .tech-stack {
       font-size: 1rem;
     }
@@ -91,10 +81,12 @@ const AboutMe = () => {
   return (
     <Main>
       <Grid>
+        <SectionHeader>
+          <h1>About Me</h1>
+        </SectionHeader>
         <Row>
           <Column>
             <TextContainer>
-              <h1>About Me</h1>
               <p className="description">
                 Full Stack Developer crafting scalable solutions in 
                 <span className="highlight"> mobile health</span>, 

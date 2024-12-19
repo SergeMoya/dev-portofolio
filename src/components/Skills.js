@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import '../styles/Skills.css';
 import { skillDescriptions } from './skillDescriptions';
+import SectionHeader from './common/SectionHeader';
 
 // Importing images
 import javascriptLogo from '../images/logo/javascript.svg';
@@ -108,9 +109,9 @@ const Skills = () => {
 
   return (
     <div className="skills-section">
-      <div className="skills-header">
+      <SectionHeader>
         <h1>Skills Overview</h1>
-      </div>
+      </SectionHeader>
       <div className={`slider ${isAnimationPaused ? 'paused' : ''}`}>
         <div className="track">
           <div className="icon-set">

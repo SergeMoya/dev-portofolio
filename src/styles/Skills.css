@@ -4,28 +4,6 @@
   background-color: #090b20; 
 }
 
-.skills-header {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
-  color: #fff;
-  padding: 1rem;
-  position: relative;
-}
-
-.skills-header:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background-color: #2ecc71;
-  border-radius: 2px;
-}
-
 .skills-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
