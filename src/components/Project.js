@@ -13,7 +13,7 @@ import Project3PDF from '../pdf-project/Project3.pdf';
 const projects = [
   {
     title: "Medical Data Analysis Platform",
-    description: "A cloud-based solution for analyzing and visualizing medical data in real-time, utilizing advanced AI algorithms.",
+    description: "A cloud-based solution for analyzing and visualizing medical data in real-time, utilizing advanced AI algorithms for precise health monitoring and predictive analytics.",
     technologies: ["React", "Node.js", "MongoDB", "AWS"],
     image: Image1,
     link: "https://play.google.com/store/apps/details?id=com.acarepulseoximetereapp&hl=en-US&ah=A7FWPNVKIwsv8-xQXW9U-bADgIE",
@@ -37,49 +37,78 @@ const projects = [
   }
 ];
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.5 } }
-};
-
 const Project = () => {
-  const handleLearnMore = (pdfPath) => {
-    if (pdfPath && pdfPath !== "#") {
-      window.open(pdfPath, '_blank');
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.6,
+        ease: "easeOut"
+      } 
     }
   };
 
   return (
-    <>
+    <motion.div
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true }}
+    >
       <SectionHeader>
-        <h1>Selected Projects</h1>
+        <h1>Featured Projects</h1>
       </SectionHeader>
       <div className="projects-container">
         {projects.map((project, index) => (
-          <Tilt className="Tilt" options={{ max: 25, scale: 1.05 }} key={index}>
-            <motion.div 
-              className="project-card"
-              variants={fadeIn}
-              initial="hidden"
-              animate="show"
+          <motion.div
+            key={index}
+            variants={fadeIn}
+            transition={{ delay: index * 0.2 }}
+          >
+            <Tilt
+              className="Tilt"
+              options={{
+                max: 15,
+                scale: 1,
+                speed: 450,
+                glare: true,
+                "max-glare": 0.5,
+              }}
             >
-              <img src={project.image} alt={project.title} className="project-image" />
-              <div className="project-info">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <ul className="technologies">
-                  {project.technologies.map(tech => <li key={tech}>{tech}</li>)}
-                </ul>
-                <div className="button-container">
-                  <a href={project.link} className="project-button" target="_blank" rel="noopener noreferrer">View Project</a>
-                  {/*<button onClick={() => handleLearnMore(project.learnMore)} className="project-button learn-more">Learn More</button>*/}
+              <div className="project-card">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="project-image"
+                  loading="lazy"
+                />
+                <div className="project-info">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <ul className="technologies">
+                    {project.technologies.map((tech, idx) => (
+                      <li key={idx}>{tech}</li>
+                    ))}
+                  </ul>
+                  <div className="button-container">
+                    <a 
+                      href={project.link}
+                      className="project-button"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} project`}
+                    >
+                      View Project
+                    </a>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          </Tilt>
+            </Tilt>
+          </motion.div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 
