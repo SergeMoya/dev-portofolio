@@ -38,6 +38,14 @@ const Skills = () => {
     const newVisiblePopup = visiblePopup === key ? null : key;
     setVisiblePopup(newVisiblePopup);
     setIsAnimationPaused(newVisiblePopup !== null);
+    
+    // Add or remove class to prevent background scroll
+    const skillsSection = document.querySelector('.skills-section');
+    if (newVisiblePopup) {
+      skillsSection.classList.add('popup-open');
+    } else {
+      skillsSection.classList.remove('popup-open');
+    }
   };
 
   const syncScroll = useCallback(() => {

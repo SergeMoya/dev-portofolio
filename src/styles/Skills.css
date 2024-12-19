@@ -295,13 +295,62 @@
 @media screen and (max-width: 990px) {
 
   .popup {
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 100%;
     left: 50%;
-    transform: translate(-45%, 27%);
-    width: 250px;
-    max-width: 350px;
-    max-height: 80vh;
+    transform: translateX(-50%);
+    width: 280px;
+    max-width: 90vw;
+    max-height: 250px;
+    margin-top: 10px;
+    z-index: 1000;
+  }
+
+  /* Handle left edge cases */
+  .skills-box:nth-child(odd) .popup {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .skills-box:nth-child(odd) .popup::before {
+    left: 25%;
+    transform: translateX(0);
+  }
+
+  /* Handle right edge cases */
+  .skills-box:nth-child(even) .popup {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+  }
+
+  .skills-box:nth-child(even) .popup::before {
+    left: 75%;
+    transform: translateX(0);
+  }
+
+  /* Handle bottom row icons (last 4 icons) */
+  .skills-box:nth-last-child(-n+4) .popup {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .skills-box:nth-last-child(-n+4) .popup::before {
+    top: auto;
+    bottom: -8px;
+    border-top: 8px solid #1e1e1e;
+    border-bottom: none;
+  }
+
+  .skills-box {
+    position: relative;
+  }
+
+  .skills-section.popup-open {
+    position: relative;
+    overflow: hidden;
   }
 
   .skills-box:hover .skills-img {
