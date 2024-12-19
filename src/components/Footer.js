@@ -4,7 +4,7 @@ import '../styles/Footer.css'; // Assuming you will create a CSS file for stylin
 const Footer = () => {
     return (
         <footer className="footer">
-            <p>Copyright © {(new Date().getFullYear())} Acare Technology Co ltd.,. All rights reserved.</p>
+            <p>Copyright © {(new Date().getFullYear())} Serge Zida. All rights reserved.</p>
         </footer>
     );
 }

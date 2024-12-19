@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import '../styles/Skills.css';
 import { skillDescriptions } from './skillDescriptions';
+import SectionHeader from './common/SectionHeader';
 
 // Importing images
 import javascriptLogo from '../images/logo/javascript.svg';
@@ -38,6 +39,17 @@ const Skills = () => {
     const newVisiblePopup = visiblePopup === key ? null : key;
     setVisiblePopup(newVisiblePopup);
     setIsAnimationPaused(newVisiblePopup !== null);
+    
+    // Remove active class from all skills boxes
+    document.querySelectorAll('.skills-box').forEach(box => {
+      box.classList.remove('active');
+    });
+
+    // Add active class to clicked skills box
+    if (newVisiblePopup) {
+      const activeBox = document.querySelector(`.skills-box[data-key="${key}"]`);
+      if (activeBox) activeBox.classList.add('active');
+    }
   };
 
   const syncScroll = useCallback(() => {
@@ -97,15 +109,16 @@ const Skills = () => {
 
   return (
     <div className="skills-section">
-      <div className="skills-header">
+      <SectionHeader>
         <h1>Skills Overview</h1>
-      </div>
+      </SectionHeader>
       <div className={`slider ${isAnimationPaused ? 'paused' : ''}`}>
         <div className="track">
           <div className="icon-set">
             {skillsData.map((skill) => (
               <div
                 key={skill.key}
+                data-key={skill.key}
                 className="skills-box"
                 onClick={() => handleTogglePopup(skill.key)}
               >
