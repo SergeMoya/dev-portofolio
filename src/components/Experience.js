@@ -49,23 +49,44 @@ const Experience = () => {
   }
 
   return (
-    <div>
+    <div className="experience-container">
       {workExperiences.length > 0 && (
         <>
           <SectionHeader>
             <h1>Work Experience</h1>
           </SectionHeader>
-          <VerticalTimeline>
+          <VerticalTimeline animate={true}>
             {workExperiences.map((exp, index) => (
               <VerticalTimelineElement
                 key={index}
                 date={exp.year}
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                iconStyle={{ 
+                  background: 'rgb(33, 150, 243)', 
+                  color: '#fff',
+                  boxShadow: '0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)'
+                }}
+                contentStyle={{
+                  background: '#fff',
+                  boxShadow: '0 3px 0 #ddd',
+                  borderRadius: '8px',
+                }}
+                contentArrowStyle={{ borderRight: '7px solid #fff' }}
                 icon={<FaLaptopCode />}
               >
-                <h3 className="vertical-timeline-element-title">{exp.role} at {exp.company}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{exp.location}</h4>
-                <p>{exp.description}</p>
+                <div className="timeline-content">
+                  <h3 className="vertical-timeline-element-title">
+                    {exp.role}
+                  </h3>
+                  <h4 className="vertical-timeline-element-subtitle">
+                    {exp.company}
+                  </h4>
+                  <p className="vertical-timeline-element-location">
+                    {exp.location}
+                  </p>
+                  <p className="experience-description">
+                    {exp.description}
+                  </p>
+                </div>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
@@ -77,18 +98,38 @@ const Experience = () => {
           <SectionHeader>
             <h1>Education</h1>
           </SectionHeader>
-          <VerticalTimeline>
+          <VerticalTimeline animate={true}>
             {educationExperiences.map((edu, index) => (
               <VerticalTimelineElement
                 key={index}
                 date={edu.year}
-                iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                iconStyle={{ 
+                  background: 'rgb(233, 30, 99)', 
+                  color: '#fff',
+                  boxShadow: '0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)'
+                }}
+                contentStyle={{
+                  background: '#fff',
+                  boxShadow: '0 3px 0 #ddd',
+                  borderRadius: '8px',
+                }}
+                contentArrowStyle={{ borderRight: '7px solid #fff' }}
                 icon={<IoSchool />}
               >
-                <h3 className="vertical-timeline-element-title">{edu.department}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{edu.school}</h4>
-                <p className="vertical-timeline-element-location">{edu.location}</p>
-                <p>{edu.description}</p>
+                <div className="timeline-content">
+                  <h3 className="vertical-timeline-element-title">
+                    {edu.department}
+                  </h3>
+                  <h4 className="vertical-timeline-element-subtitle">
+                    {edu.school}
+                  </h4>
+                  <p className="vertical-timeline-element-location">
+                    {edu.location}
+                  </p>
+                  <p className="experience-description">
+                    {edu.description}
+                  </p>
+                </div>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>

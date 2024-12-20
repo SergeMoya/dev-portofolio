@@ -45,3 +45,60 @@
   padding: 10px; /* Optional: add padding for better visual spacing */
 }
 
+/* Add these styles for better mobile responsiveness */
+.vertical-timeline-element-content {
+  padding: 1.5rem !important;
+}
+
+.vertical-timeline-element-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+.vertical-timeline-element-subtitle {
+  font-size: 1rem;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+.vertical-timeline-element-location {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.75rem;
+}
+
+.experience-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #34495e;
+  white-space: pre-wrap;
+  margin-top: 0.75rem;
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  .vertical-timeline-element-content {
+    padding: 1.25rem !important;
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 1.1rem;
+  }
+
+  .vertical-timeline-element-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .vertical-timeline-element-date {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .experience-description {
+    font-size: 0.9rem;
+  }
+}
+

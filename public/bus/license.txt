@@ -1,0 +1,11 @@
+Model Information:
+* title:	Taipei 1980s Bus (HINO 2000 ERK2JMB)
+* source:	https://sketchfab.com/3d-models/taipei-1980s-bus-hino-2000-erk2jmb-8618696a51dc4e58b06e6a33ba8d5983
+* author:	Basic Hsu (https://sketchfab.com/Hsu.Pei.Ge)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Taipei 1980s Bus (HINO 2000 ERK2JMB)" (https://sketchfab.com/3d-models/taipei-1980s-bus-hino-2000-erk2jmb-8618696a51dc4e58b06e6a33ba8d5983) by Basic Hsu (https://sketchfab.com/Hsu.Pei.Ge) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

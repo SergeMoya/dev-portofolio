@@ -63,8 +63,8 @@ const Home = () => {
       setTimeout(() => setShowParagraph(true), 500);
     }
 
-    // Hide the hint after 5 seconds
-    const timer = setTimeout(() => setShowHint(false), 3000);
+    // Hide the hint after 10 seconds
+    const timer = setTimeout(() => setShowHint(false), 10000);
     return () => clearTimeout(timer);
   }, [text]);
 
