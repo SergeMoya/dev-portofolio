@@ -83,21 +83,21 @@ const publications = [
     year: "2021",
     doi: "https://doi.org/10.1109/ECBIOS51820.2021.9510541",
     focus: "Edge Computing & IoT",
-    keywords: ["Healthcare IoT", "Edge Computing", "Real-time Systems"]
+    keywords: ["Edge Computing", "Real-time Systems"  , "Distributed Systems", "System Architecture", "Healthcare IoT",]
   },
   {
     title: "A Novel Method for Baroreflex Sensitivity Estimation Using Modulated Gaussian Filter",
     year: "2022",
-    doi: "https://doi.org/10.1007/s40846-020-00550-7",
+    doi: "https://doi.org/10.3390/s22124618",
     focus: "Algorithm Development",
-    keywords: ["Real-time Processing", "Algorithm Optimization", "Healthcare Systems"]
+    keywords: ["Real-time Processing", "Algorithm Optimization", "Data Analysis", "Performance Tuning", "Statistical Analysis"]
   },
   {
     title: "Fabrication and characterization of an aptamer-based N-type silicon nanowire FET biosensor for VEGF detection",
     year: "2020",
     doi: "https://doi.org/10.1007/s40846-020-00552-5",
     focus: "System Integration",
-    keywords: ["Digital Healthcare", "Sensor Systems", "Data Processing"]
+    keywords: ["Data Pipeline Development", "System Integration", "Real-time Monitoring", "Sensor Data Analysis", "Hardware-Software Interface"]
   }
 ];
 
@@ -143,15 +143,43 @@ const Project = () => {
                     ))}
                   </ul>
                   <div className="button-container">
-                    <a 
-                      href={project.link}
-                      className="project-button"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View ${project.title} project`}
-                    >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-button">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="16" 
+                        height="16" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        style={{ marginRight: '8px' }}
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
                       View Project
                     </a>
+                    {/*<a href={project.learnMore} target="_blank" rel="noopener noreferrer" className="project-button">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="16" 
+                        height="16" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        style={{ marginRight: '8px' }}
+                      >
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
+                      Learn More
+                    </a> */}
                   </div>
                 </div>
               </div>
@@ -163,25 +191,38 @@ const Project = () => {
           <h1>Featured Research</h1>
         </SectionHeader>
         <div className="publications-container">
-          {publications.map((pub) => (
-            <a 
-              href={pub.doi}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="publication-card"
-              key={pub.title}
-            >
-              <div className="publication-focus">{pub.focus}</div>
-              <h3>{pub.title}</h3>
-              <div className="keywords">
-                {pub.keywords.map((keyword, idx) => (
-                  <span key={idx} className="keyword">
+          {publications.map((publication, index) => (
+            <div className="publication-card" key={index}>
+              <div className="publication-focus">{publication.focus}</div>
+              <h3>{publication.title}</h3>
+              <div className="publication-keywords">
+                {publication.keywords.map((keyword, keywordIndex) => (
+                  <span key={keywordIndex} className="keyword-tag">
                     {keyword}
                   </span>
                 ))}
               </div>
-              <div className="publication-year">{pub.year}</div>
-            </a>
+              <p className="publication-year">{publication.year}</p>
+              <a href={publication.doi} target="_blank" rel="noopener noreferrer" className="publication-link">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ marginRight: '8px' }}
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                View Publication
+              </a>
+            </div>
           ))}
         </div>
       </div>

@@ -54,7 +54,7 @@ const Home = () => {
   const [text, setText] = useState('');
   const [showParagraph, setShowParagraph] = useState(false);
   const [showHint, setShowHint] = useState(true);
-  const fullText = "Hello, this is Serge !";
+  const fullText = "Hello, this is Serge\u00A0!";
 
   useEffect(() => {
     if (text.length < fullText.length) {
