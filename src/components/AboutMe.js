@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import aboutImage from '../images/art2.jpg';
+import aboutImage from '../images/image_linkedin.jpg';
 import SectionHeader from './common/SectionHeader';
 
 const Main = styled.main`
@@ -34,7 +34,7 @@ const Column = styled.div`
 
 const ImageContainer = styled.div`
   img {
-    width: 100%;
+    width: 70%;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
