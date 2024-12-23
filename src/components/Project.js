@@ -1,5 +1,4 @@
 import React from 'react';
-import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import '../styles/Project.css';
 import SectionHeader from './common/SectionHeader';
@@ -78,6 +77,30 @@ const projects = [
   }
 ];
 
+const publications = [
+  {
+    title: "Evaluation of an intelligent edge computing system for the hospital intensive care unit",
+    year: "2021",
+    doi: "https://doi.org/10.1109/ECBIOS51820.2021.9510541",
+    focus: "Edge Computing & IoT",
+    keywords: ["Healthcare IoT", "Edge Computing", "Real-time Systems"]
+  },
+  {
+    title: "A Novel Method for Baroreflex Sensitivity Estimation Using Modulated Gaussian Filter",
+    year: "2022",
+    doi: "https://doi.org/10.1007/s40846-020-00550-7",
+    focus: "Algorithm Development",
+    keywords: ["Real-time Processing", "Algorithm Optimization", "Healthcare Systems"]
+  },
+  {
+    title: "Fabrication and characterization of an aptamer-based N-type silicon nanowire FET biosensor for VEGF detection",
+    year: "2020",
+    doi: "https://doi.org/10.1007/s40846-020-00552-5",
+    focus: "System Integration",
+    keywords: ["Digital Healthcare", "Sensor Systems", "Data Processing"]
+  }
+];
+
 const Project = () => {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -92,30 +115,17 @@ const Project = () => {
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="show"
-      viewport={{ once: true }}
-    >
-      <SectionHeader>
-        <h1>Featured Projects</h1>
-      </SectionHeader>
-      <div className="projects-container">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            variants={fadeIn}
-            transition={{ delay: index * 0.2 }}
-          >
-            <Tilt
-              className="Tilt"
-              options={{
-                max: 15,
-                scale: 1,
-                speed: 450,
-                glare: true,
-                "max-glare": 0.5,
-              }}
+    <section className="projects-section" id="projects">
+      <div className="projects-content">
+        <SectionHeader>
+          <h1>Featured Projects</h1>
+        </SectionHeader>
+        <div className="projects-container">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={fadeIn}
+              transition={{ delay: index * 0.2 }}
             >
               <div className="project-card">
                 <img 
@@ -145,11 +155,37 @@ const Project = () => {
                   </div>
                 </div>
               </div>
-            </Tilt>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
+
+        <SectionHeader>
+          <h1>Featured Research</h1>
+        </SectionHeader>
+        <div className="publications-container">
+          {publications.map((pub) => (
+            <a 
+              href={pub.doi}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="publication-card"
+              key={pub.title}
+            >
+              <div className="publication-focus">{pub.focus}</div>
+              <h3>{pub.title}</h3>
+              <div className="keywords">
+                {pub.keywords.map((keyword, idx) => (
+                  <span key={idx} className="keyword">
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+              <div className="publication-year">{pub.year}</div>
+            </a>
+          ))}
+        </div>
       </div>
-    </motion.div>
+    </section>
   );
 };
 

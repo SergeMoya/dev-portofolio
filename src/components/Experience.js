@@ -19,15 +19,15 @@ const parseEnvData = (envVar) => {
 };
 
 // Debug logs
-console.log('Work Experience ENV:', process.env.REACT_APP_WORK_EXPERIENCE);
-console.log('Education ENV:', process.env.REACT_APP_EDUCATION);
+//console.log('Work Experience ENV:', process.env.REACT_APP_WORK_EXPERIENCE);
+//console.log('Education ENV:', process.env.REACT_APP_EDUCATION);
 
 const workExperiences = parseEnvData(process.env.REACT_APP_WORK_EXPERIENCE);
 const educationExperiences = parseEnvData(process.env.REACT_APP_EDUCATION);
 
 // Debug logs
-console.log('Parsed work experiences:', workExperiences);
-console.log('Parsed education experiences:', educationExperiences);
+//console.log('Parsed work experiences:', workExperiences);
+//console.log('Parsed education experiences:', educationExperiences);
 
 const Experience = () => {
   if (workExperiences.length === 0 && educationExperiences.length === 0) {
