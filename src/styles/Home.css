@@ -84,6 +84,14 @@
     overflow-x: hidden;
   }
 
+  .content h1 {
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
   .p-show {
     width: auto !important;
     max-width: calc(100% - 30px) !important;
@@ -265,5 +273,32 @@
   
   .interaction-hint span {
     font-size: 0.7rem;
+  }
+}
+
+/* iPhone specific styles */
+@media screen and (max-width: 430px) {
+  .content h1 {
+    font-size: 2rem;
+    white-space: nowrap !important;
+    width: 100% !important;
+    display: inline-block !important;
+    letter-spacing: -0.5px;
+  }
+
+  .content {
+    padding: 8vh 15px 5vh 15px;
+  }
+}
+
+/* Add specific styles for iPhone 14 Pro */
+@media screen and (device-width: 393px) and (device-height: 852px),
+       screen and (max-width: 393px) {
+  .content h1 {
+    font-size: 1.8rem;
+    white-space: nowrap !important;
+    width: fit-content !important;
+    display: inline-block !important;
+    letter-spacing: -0.5px;
   }
 }

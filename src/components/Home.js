@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ComputerScene from '../canvas/Computer_desktop';
+import ComputerScene from '../canvas/3D_animation';
 import MouseScroll from '../utilities/MouseScroll';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -54,7 +54,7 @@ const Home = () => {
   const [text, setText] = useState('');
   const [showParagraph, setShowParagraph] = useState(false);
   const [showHint, setShowHint] = useState(true);
-  const fullText = "Hello, this is Serge !";
+  const fullText = "Hello, this is Serge\u00A0!";
 
   useEffect(() => {
     if (text.length < fullText.length) {
