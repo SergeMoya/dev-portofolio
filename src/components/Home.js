@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ComputerScene from '../canvas/Computer_desktop';
+import ComputerScene from '../canvas/3D_animation';
 import MouseScroll from '../utilities/MouseScroll';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
