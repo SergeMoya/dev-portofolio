@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import '../styles/Project.css';
 import SectionHeader from './common/SectionHeader';
 import Image1 from '../images/Project1.png';
-import Image2 from '../images/project2.png';
+import Image2 from '../images/Project2.png';
 import Image3 from '../images/Project3.png';
 import Project1PDF from '../pdf-project/Project1.pdf';
 import Project2PDF from '../pdf-project/Project2.pdf';
