@@ -3,7 +3,8 @@ import ComputerScene from '../canvas/3D_animation';
 import MouseScroll from '../utilities/MouseScroll';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';  
 import styled from 'styled-components';
 import '../styles/Home.css';
 
@@ -96,9 +97,13 @@ const Home = () => {
             <FontAwesomeIcon icon={faLinkedin} />
             <Tooltip>LinkedIn</Tooltip>
           </SocialIcon>
-          <SocialIcon href="https://www.instagram.com/acare0618/" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} />
-            <Tooltip>Instagram</Tooltip>
+          <SocialIcon 
+            href="mailto:serge.zida@gmail.com" 
+            target="_blank"  
+            rel="noopener noreferrer" 
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+            <Tooltip>Gmail</Tooltip>
           </SocialIcon>
           <SocialIcon href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=serge+ismael+zida&oq=serge" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGoogleScholar} />
