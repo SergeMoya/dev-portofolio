@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import aboutImage from '../images/image_linkedin.jpg';
+import aboutImage from '../images/image1.jpg';
 import SectionHeader from './common/SectionHeader';
 
 const Main = styled.main`

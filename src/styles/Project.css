@@ -11,10 +11,11 @@
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 5rem;
+  padding: 0 1rem;
 }
 
 .project-card {
@@ -41,6 +42,12 @@
   height: 250px;
   object-fit: cover;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: var(--color-card-bg);
+  padding: 1rem;
 }
 
 .project-info {
@@ -272,6 +279,21 @@
   
   .project-image {
     height: 220px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem;
+  }
+  
+  .project-image {
+    height: 200px;
+  }
+  
+  .project-info {
+    padding: 1.5rem;
   }
 }
 

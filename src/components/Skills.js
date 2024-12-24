@@ -14,6 +14,10 @@ import html5Logo from '../images/logo/html5.svg';
 import css3Logo from '../images/logo/css3.svg';
 import gitLogo from '../images/logo/git.svg';
 import jestLogo from '../images/logo/jest.svg';
+import blockchainLogo from '../images/logo/blockchain.svg';
+import reactnativeLogo from '../images/logo/reactnative.svg';
+import pythonLogo from '../images/logo/python.svg';
+import devopsLogo from '../images/logo/devops.svg';
 
 // Skills data
 const skillsData = [
@@ -26,7 +30,11 @@ const skillsData = [
   { key: 'html5', title: 'HTML5', imgSrc: html5Logo },
   { key: 'css3', title: 'CSS3', imgSrc: css3Logo },
   { key: 'git', title: 'Git', imgSrc: gitLogo },
-  { key: 'jest', title: 'Jest', imgSrc: jestLogo }
+  { key: 'jest', title: 'Jest', imgSrc: jestLogo },
+  { key: 'blockchain', title: 'Blockchain', imgSrc: blockchainLogo },
+  { key: 'reactnative', title: 'React Native', imgSrc: reactnativeLogo },
+  { key: 'python', title: 'Python', imgSrc: pythonLogo },
+  { key: 'devops', title: 'DevOps', imgSrc: devopsLogo }
 ];
 
 const Skills = () => {
