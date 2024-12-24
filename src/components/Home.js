@@ -86,7 +86,7 @@ const Home = () => {
           animate={{ opacity: showParagraph ? 1 : 0, y: showParagraph ? 0 : 20 }}
           transition={{ duration: 0.5 }}
         >
-          Full Stack Engineer with a Ph.D. in Electrical Engineering, bridging advanced technology and practical innovation. Architected multiple groundbreaking solutions: from launching a medical device company's first IoT platform to building sophisticated DeFi and algorithmic trading systems. Passionate about transforming complex technical challenges into scalable, market-ready products — whether in Web3, healthcare tech, or AI/ML domains.
+          Full Stack Engineer who loves turning complex challenges into reliable solutions. Whether it's building scalable platforms or creating intuitive user experiences, I'm always excited to tackle meaningful projects.
         </motion.p>
         <SocialMediaContainer>
           <SocialIcon href="https://github.com/SergeMoya" target="_blank" rel="noopener noreferrer">

@@ -132,19 +132,16 @@ const AboutMe = () => {
           <Column>
             <TextContainer>
               <p className="description">
-                Full Stack Developer crafting scalable solutions in 
-                <span className="highlight"> mobile health</span>, 
-                <span className="highlight"> blockchain</span>, and 
-                <span className="highlight"> AI</span>. Built a BLE-enabled health 
-                monitoring app, DeFi portfolio systems, and ML-driven malaria 
-                prevention analytics for Africa.
+                I get excited about building tech that makes a real difference. With my background in full-stack development and a Ph.D. in Electrical Engineering, I bring both deep technical knowledge and practical coding skills to every project.
+              </p>
+              <p className="description">
+                Recently, I led the development of a mobile platform using MERN and AWS, making the service more accessible while reducing operational costs by 20%. Before that, as a Senior Reliability Engineer, I discovered my passion for building robust systems – from automated testing frameworks to intuitive data dashboards.
+              </p>
+              <p className="description">
+                My Ph.D. research in <span className="highlight">Electrical Engineering</span> gives me a unique edge when it comes to optimization and real-time processing. But I'm not all about code! You'll often find me driving through Taiwan's mountain roads, trying out local dishes, or working on my fitness.
               </p>
               <p className="tech-stack">
                 Tech Stack: React Native • React.js • Node.js • Machine Learning
-              </p>
-              <p className="description">
-                Always eager to tackle new challenges with emerging technologies 
-                and create impactful solutions that make a difference.
               </p>
             </TextContainer>
           </Column>
