@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Skills from './components/Skills';
@@ -8,7 +9,7 @@ import Experience from './components/Experience';
 import Project from './components/Project';
 import Footer from './components/Footer';
 //import Contact from './components/Contact';
-// Import other components as needed*/
+// Import other components as needed
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       {/*<div id="contact"><Contact/></div>
        Add other sections here as needed */}
       <Footer />
+      <Analytics />
     </div>
   );
 };
