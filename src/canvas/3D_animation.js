@@ -17,6 +17,7 @@ const Computer = ({ onInteraction }) => {
   const model = useGLTF('/computer/scene.gltf', true);
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
+  const rotationProgress = useRef(0);
 
   useEffect(() => {
     if (modelRef.current) {
@@ -26,7 +27,15 @@ const Computer = ({ onInteraction }) => {
 
   useFrame((state, delta) => {
     if (isRotating && modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.5;
+      const rotationSpeed = 0.5;
+      modelRef.current.rotation.y += delta * rotationSpeed;
+      rotationProgress.current += delta * rotationSpeed;
+
+      // Check if we've completed one full rotation (2π radians)
+      if (rotationProgress.current >= Math.PI * 2) {
+        setIsRotating(false);
+        onInteraction();
+      }
     }
   });
 
@@ -51,7 +60,7 @@ const ComputerScene = () => {
   };
 
   return (
-    <Canvas>
+    <Canvas className="canvas-container">
       <CameraSetup />
       <ambientLight intensity={0.7} />
       <directionalLight position={[10, 10, 5]} intensity={1.2} />
