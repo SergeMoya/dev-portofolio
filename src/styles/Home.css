@@ -161,6 +161,14 @@
   padding-top: 15vh;
 }
 
+.canvas-container {
+  cursor: grab;
+}
+
+.canvas-container:active {
+  cursor: grabbing;
+}
+
 .interaction-hint {
   position: absolute;
   top: 90px;
