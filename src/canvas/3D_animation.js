@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import React, { useRef, useEffect, useState } from 'react';
+import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, SpotLight } from '@react-three/drei';
 
 const CameraSetup = () => {
@@ -13,9 +13,10 @@ const CameraSetup = () => {
   return null;
 };
 
-const ComputerScene = () => {
+const Computer = ({ onInteraction }) => {
   const model = useGLTF('/computer/scene.gltf', true);
   const modelRef = useRef();
+  const [isRotating, setIsRotating] = useState(true);
 
   useEffect(() => {
     if (modelRef.current) {
@@ -23,16 +24,39 @@ const ComputerScene = () => {
     }
   }, []);
 
+  useFrame((state, delta) => {
+    if (isRotating && modelRef.current) {
+      modelRef.current.rotation.y += delta * 0.5;
+    }
+  });
+
+  const handleInteraction = () => {
+    setIsRotating(false);
+    onInteraction();
+  };
+
+  return (
+    <primitive 
+      ref={modelRef} 
+      object={model.scene} 
+      scale={0.5}
+      onClick={handleInteraction}
+    />
+  );
+};
+
+const ComputerScene = () => {
+  const handleInteraction = () => {
+    // This can be used to handle any parent-level interactions
+  };
+
   return (
     <Canvas>
       <CameraSetup />
-      <ambientLight intensity={0.7} /> {/* Increased ambient light intensity */}
-      <directionalLight position={[10, 10, 5]} intensity={1.2} /> {/* Increased main light intensity */}
-      
-      {/* Added fill light from the opposite side */}
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[10, 10, 5]} intensity={1.2} />
       <directionalLight position={[-10, 5, -5]} intensity={0.8} color="#FFF5E6" />
       
-      {/* Added spotlight to focus on the desktop */}
       <SpotLight
         position={[0, 5, 0]}
         angle={0.6}
@@ -42,7 +66,7 @@ const ComputerScene = () => {
         shadow-mapSize={[1024, 1024]}
       />
 
-      <primitive ref={modelRef} object={model.scene} scale={0.5} />
+      <Computer onInteraction={handleInteraction} />
       <OrbitControls 
         enablePan={true}
         enableZoom={false}
@@ -51,6 +75,7 @@ const ComputerScene = () => {
         minPolarAngle={Math.PI * 0.25}
         maxDistance={7}
         minDistance={2}
+        onChange={handleInteraction}
       />
     </Canvas>
   );
