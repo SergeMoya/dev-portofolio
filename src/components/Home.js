@@ -86,7 +86,7 @@ const Home = () => {
           animate={{ opacity: showParagraph ? 1 : 0, y: showParagraph ? 0 : 20 }}
           transition={{ duration: 0.5 }}
         >
-          Full Stack Engineer who loves turning complex challenges into reliable solutions. Whether it's building scalable platforms or creating intuitive user experiences, I'm always excited to tackle meaningful projects.
+          Full Stack Engineer who loves turning complex challenges into robust solutions. Whether it's building scalable platforms or creating intuitive user experiences, I'm always excited to tackle meaningful projects.
         </motion.p>
         <SocialMediaContainer>
           <SocialIcon href="https://github.com/SergeMoya" target="_blank" rel="noopener noreferrer">
