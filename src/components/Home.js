@@ -86,7 +86,7 @@ const Home = () => {
           animate={{ opacity: showParagraph ? 1 : 0, y: showParagraph ? 0 : 20 }}
           transition={{ duration: 0.5 }}
         >
-          Full Stack Engineer who loves turning complex challenges into robust solutions. Whether it's building scalable platforms or creating intuitive user experiences, I'm always excited to tackle meaningful projects.
+          Full Stack Engineer who architects and implements impactful solutions. I transform complex challenges into scalable systems. My passion is crafting elegant architectures that solve real-world problems.
         </motion.p>
         <SocialMediaContainer>
           <SocialIcon href="https://github.com/SergeMoya" target="_blank" rel="noopener noreferrer">

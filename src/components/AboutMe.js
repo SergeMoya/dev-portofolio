@@ -132,16 +132,22 @@ const AboutMe = () => {
           <Column>
             <TextContainer>
               <p className="description">
-                I get excited about building tech that makes a real difference. With my background in full-stack development and a Ph.D. in Electrical Engineering, I bring both deep technical knowledge and practical coding skills to every project.
+                I'm passionate about building impactful technical solutions that bridge the gap between complex requirements and elegant implementations. With my background in full-stack development and a Ph.D. in Electrical Engineering, I bring a unique combination of deep technical understanding and practical engineering skills to every project.
               </p>
               <p className="description">
-                Recently, I led the development of a mobile platform using MERN and AWS, making the service more accessible while reducing operational costs by 20%. Before that, as a Senior Reliability Engineer, I discovered my passion for building robust systems – from automated testing frameworks to intuitive data dashboards.
+                In my current role, I architected and developed a pulse oximeter companion app, a cross-platform digital health solution. Leveraging React Native for mobile development, I designed and implemented a scalable and HIPAA-compliant medical device companion app. The system, supported by a Node.js/Express backend and MongoDB, and deployed on AWS, is not only functional but also maintainable and adaptable to future needs. The successful market launch of ACOX marked the company's entry into the software market, significantly enhancing brand awareness and establishing a new product category.
               </p>
               <p className="description">
-                My Ph.D. research in <span className="highlight">Electrical Engineering</span> gives me a unique edge when it comes to optimization and real-time processing. But I'm not all about code! You'll often find me driving through Taiwan's mountain roads, trying out local dishes, or working on my fitness.
+                Previous to that, as a Senior Software Engineer, I focused on developing automated testing frameworks and data processing systems. Using Python for backend services and React for user interfaces, I built scalable architectures that handled complex data processing workflows and automated testing pipelines. This role strengthened my expertise in creating robust software solutions while providing valuable experience in building high-performance data processing systems.
+              </p>
+              <p className="description">
+                My Ph.D. research in <span className="highlight">Electrical Engineering</span>, combined with extensive software development experience, enables me to bridge the gap between theoretical concepts and practical implementations. This foundation has proven invaluable in developing solutions, where understanding both hardware interfaces and software architecture was crucial.
+              </p>
+              <p className="description">
+                When I'm not designing systems or coding, you'll find me exploring Taiwan's mountain roads, discovering local cuisine, or working on my fitness. This balance helps me maintain creativity and fresh perspectives in my technical work.
               </p>
               <p className="tech-stack">
-                Tech Stack: React Native • React.js • Node.js • Machine Learning
+                Tech Focus: Full-Stack Development (MERN) • System Architecture & AWS Infrastructure • Automated Testing & CI/CD • Real-time Processing & IoT • Healthcare Technology Solutions
               </p>
             </TextContainer>
           </Column>

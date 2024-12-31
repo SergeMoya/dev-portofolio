@@ -80,21 +80,18 @@ const projects = [
 const publications = [
   {
     title: "Evaluation of an intelligent edge computing system for the hospital intensive care unit",
-    year: "2021",
     doi: "https://doi.org/10.1109/ECBIOS51820.2021.9510541",
     focus: "Edge Computing & IoT",
     keywords: ["Edge Computing", "Real-time Systems"  , "Distributed Systems", "System Architecture", "Healthcare IoT",]
   },
   {
     title: "A Novel Method for Baroreflex Sensitivity Estimation Using Modulated Gaussian Filter",
-    year: "2022",
     doi: "https://doi.org/10.3390/s22124618",
     focus: "Algorithm Development",
     keywords: ["Real-time Processing", "Algorithm Optimization", "Data Analysis", "Performance Tuning", "Statistical Analysis"]
   },
   {
     title: "Fabrication and characterization of an aptamer-based N-type silicon nanowire FET biosensor for VEGF detection",
-    year: "2020",
     doi: "https://doi.org/10.1007/s40846-020-00552-5",
     focus: "System Integration",
     keywords: ["Data Pipeline Development", "System Integration", "Real-time Monitoring", "Sensor Data Analysis", "Hardware-Software Interface"]
