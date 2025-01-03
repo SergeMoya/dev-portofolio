@@ -11,7 +11,7 @@ import Project3PDF from '../pdf-project/Project3.pdf';
 
 const projects = [
   {
-    title: "Acare Pulse Oximeter Mobile App",
+    title: "Pulse Oximeter Mobile Appication",
     description: "A sophisticated healthcare monitoring application that provides real-time blood oxygen (SpO2) and heart rate measurements through Bluetooth-enabled pulse oximeters. Features include live data visualization, historical data tracking, customizable alarms, multi-language support, and secure user authentication with AWS cloud integration for reliable data storage and analysis.",
     technologies: [
       "React Native",
@@ -80,21 +80,18 @@ const projects = [
 const publications = [
   {
     title: "Evaluation of an intelligent edge computing system for the hospital intensive care unit",
-    year: "2021",
     doi: "https://doi.org/10.1109/ECBIOS51820.2021.9510541",
     focus: "Edge Computing & IoT",
     keywords: ["Edge Computing", "Real-time Systems"  , "Distributed Systems", "System Architecture", "Healthcare IoT",]
   },
   {
     title: "A Novel Method for Baroreflex Sensitivity Estimation Using Modulated Gaussian Filter",
-    year: "2022",
     doi: "https://doi.org/10.3390/s22124618",
     focus: "Algorithm Development",
     keywords: ["Real-time Processing", "Algorithm Optimization", "Data Analysis", "Performance Tuning", "Statistical Analysis"]
   },
   {
     title: "Fabrication and characterization of an aptamer-based N-type silicon nanowire FET biosensor for VEGF detection",
-    year: "2020",
     doi: "https://doi.org/10.1007/s40846-020-00552-5",
     focus: "System Integration",
     keywords: ["Data Pipeline Development", "System Integration", "Real-time Monitoring", "Sensor Data Analysis", "Hardware-Software Interface"]

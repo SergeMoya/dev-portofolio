@@ -40,7 +40,8 @@ const Column = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  padding-top: 5rem;
   
   img {
     width: 85%;
@@ -66,6 +67,7 @@ const ImageContainer = styled.div`
 const TextContainer = styled.div`
   color: #ffffff;
   padding-top: 1rem;
+  
   
   .description {
     font-size: 1.15rem;
@@ -123,25 +125,23 @@ const TextContainer = styled.div`
 
 const AboutMe = () => {
   return (
-    <Main>
+    <Main id="about">
       <Grid>
-        <SectionHeader>
-          <h1>About Me</h1>
-        </SectionHeader>
+        <SectionHeader title="About Me" />
         <Row>
           <Column>
             <TextContainer>
               <p className="description">
-                I get excited about building tech that makes a real difference. With my background in full-stack development and a Ph.D. in Electrical Engineering, I bring both deep technical knowledge and practical coding skills to every project.
+                I'm a <span className="highlight">Full-Stack Engineer</span> with a <span className="highlight">Ph.D. in Electrical Engineering</span>, combining deep technical expertise with hands-on engineering skills to deliver impactful solutions. I recently architected a <span className="highlight">HIPAA-compliant</span> pulse oximeter companion app using <span className="highlight">React Native</span>, <span className="highlight">Node.js/Express</span>, and <span className="highlight">AWS</span>. This project resulted in the successful launch of the company's first software product and established its presence in the software industry.
               </p>
               <p className="description">
-                Recently, I led the development of a mobile platform using MERN and AWS, making the service more accessible while reducing operational costs by 20%. Before that, as a Senior Reliability Engineer, I discovered my passion for building robust systems – from automated testing frameworks to intuitive data dashboards.
+                Previously, as a <span className="highlight">Senior Reliability Engineer</span>, I developed automated testing frameworks and data processing systems using <span className="highlight">Python</span> and <span className="highlight">React</span>, building scalable architectures for complex semiconductor workflows. Moreover, my Ph.D. research background enables me to bridge theoretical concepts with practical implementations, particularly valuable in projects requiring <span className="highlight">hardware-software integration</span>.
               </p>
               <p className="description">
-                My Ph.D. research in <span className="highlight">Electrical Engineering</span> gives me a unique edge when it comes to optimization and real-time processing. But I'm not all about code! You'll often find me driving through Taiwan's mountain roads, trying out local dishes, or working on my fitness.
+                When not coding, I am driving Taiwan's mountain roads and exploring local cuisine, maintaining creativity and fresh perspectives.
               </p>
               <p className="tech-stack">
-                Tech Stack: React Native • React.js • Node.js • Machine Learning
+                Tech Focus: <span className="highlight">Full-Stack Development (MERN)</span> • <span className="highlight">Algorithms</span> • <span className="highlight">System Architecture</span> & <span className="highlight">AWS</span> • <span className="highlight">Automated Testing</span> & <span className="highlight">CI/CD</span> • <span className="highlight">Real-time signal Processing</span> & <span className="highlight">IoT</span>
               </p>
             </TextContainer>
           </Column>
