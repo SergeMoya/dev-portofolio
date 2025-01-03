@@ -203,8 +203,15 @@ body {
     }
 
     .navbar button:hover {
+        background-color: transparent;
+        color: var(--text-color);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .navbar button.active {
         background-color: var(--primary-color);
-        color: white;
+        color: #FFFFFF;
         transform: scale(1.05);
         box-shadow: 0 4px 12px rgba(21, 101, 192, 0.15);
     }

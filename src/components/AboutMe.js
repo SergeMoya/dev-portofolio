@@ -40,7 +40,8 @@ const Column = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  padding-top: 5rem;
   
   img {
     width: 85%;
@@ -66,6 +67,7 @@ const ImageContainer = styled.div`
 const TextContainer = styled.div`
   color: #ffffff;
   padding-top: 1rem;
+  
   
   .description {
     font-size: 1.15rem;
@@ -123,31 +125,23 @@ const TextContainer = styled.div`
 
 const AboutMe = () => {
   return (
-    <Main>
+    <Main id="about">
       <Grid>
-        <SectionHeader>
-          <h1>About Me</h1>
-        </SectionHeader>
+        <SectionHeader title="About Me" />
         <Row>
           <Column>
             <TextContainer>
               <p className="description">
-                I'm passionate about building impactful technical solutions that bridge the gap between complex requirements and elegant implementations. With my background in full-stack development and a Ph.D. in Electrical Engineering, I bring a unique combination of deep technical understanding and practical engineering skills to every project.
+                I'm a <span className="highlight">Full-Stack Engineer</span> with a <span className="highlight">Ph.D. in Electrical Engineering</span>, combining deep technical expertise with hands-on engineering skills to deliver impactful solutions. I recently architected a <span className="highlight">HIPAA-compliant</span> pulse oximeter companion app using <span className="highlight">React Native</span>, <span className="highlight">Node.js/Express</span>, and <span className="highlight">AWS</span>. This project resulted in the successful launch of the company's first software product and established its presence in the software industry.
               </p>
               <p className="description">
-                In my current role, I architected and developed a pulse oximeter companion app, a cross-platform digital health solution. Leveraging React Native for mobile development, I designed and implemented a scalable and HIPAA-compliant medical device companion app. The system, supported by a Node.js/Express backend and MongoDB, and deployed on AWS, is not only functional but also maintainable and adaptable to future needs. The successful market launch of ACOX marked the company's entry into the software market, significantly enhancing brand awareness and establishing a new product category.
+                Previously, as a <span className="highlight">Senior Reliability Engineer</span>, I developed automated testing frameworks and data processing systems using <span className="highlight">Python</span> and <span className="highlight">React</span>, building scalable architectures for complex semiconductor workflows. Moreover, my Ph.D. research background enables me to bridge theoretical concepts with practical implementations, particularly valuable in projects requiring <span className="highlight">hardware-software integration</span>.
               </p>
               <p className="description">
-                Previous to that, as a Senior Software Engineer, I focused on developing automated testing frameworks and data processing systems. Using Python for backend services and React for user interfaces, I built scalable architectures that handled complex data processing workflows and automated testing pipelines. This role strengthened my expertise in creating robust software solutions while providing valuable experience in building high-performance data processing systems.
-              </p>
-              <p className="description">
-                My Ph.D. research in <span className="highlight">Electrical Engineering</span>, combined with extensive software development experience, enables me to bridge the gap between theoretical concepts and practical implementations. This foundation has proven invaluable in developing solutions, where understanding both hardware interfaces and software architecture was crucial.
-              </p>
-              <p className="description">
-                When I'm not designing systems or coding, you'll find me exploring Taiwan's mountain roads, discovering local cuisine, or working on my fitness. This balance helps me maintain creativity and fresh perspectives in my technical work.
+                When not coding, I am driving Taiwan's mountain roads and exploring local cuisine, maintaining creativity and fresh perspectives.
               </p>
               <p className="tech-stack">
-                Tech Focus: Full-Stack Development (MERN) • System Architecture & AWS Infrastructure • Automated Testing & CI/CD • Real-time Processing & IoT • Healthcare Technology Solutions
+                Tech Focus: <span className="highlight">Full-Stack Development (MERN)</span> • <span className="highlight">Algorithms</span> • <span className="highlight">System Architecture</span> & <span className="highlight">AWS</span> • <span className="highlight">Automated Testing</span> & <span className="highlight">CI/CD</span> • <span className="highlight">Real-time signal Processing</span> & <span className="highlight">IoT</span>
               </p>
             </TextContainer>
           </Column>

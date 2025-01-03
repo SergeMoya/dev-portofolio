@@ -11,7 +11,7 @@ import Project3PDF from '../pdf-project/Project3.pdf';
 
 const projects = [
   {
-    title: "Acare Pulse Oximeter Mobile App",
+    title: "Pulse Oximeter Mobile Appication",
     description: "A sophisticated healthcare monitoring application that provides real-time blood oxygen (SpO2) and heart rate measurements through Bluetooth-enabled pulse oximeters. Features include live data visualization, historical data tracking, customizable alarms, multi-language support, and secure user authentication with AWS cloud integration for reliable data storage and analysis.",
     technologies: [
       "React Native",

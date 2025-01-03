@@ -45,7 +45,6 @@ const Header = () => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setActiveSection(id);
             setIsOpen(false);
         }
     };
@@ -65,7 +64,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <h1 className="logo" onClick={() => scrollTo('home')}>Serge Zida</h1>
+            <h1 className="logo" onClick={() => scrollTo('home')}>Serge Ismael Zida</h1>
             <input
                 id="hamburger-toggle"
                 type="checkbox"
