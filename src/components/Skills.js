@@ -20,21 +20,33 @@ import pythonLogo from '../images/logo/python.svg';
 import devopsLogo from '../images/logo/devops.svg';
 
 // Skills data
+// Skills data organized by categories
 const skillsData = [
-  { key: 'javascript', title: 'JavaScript', imgSrc: javascriptLogo },
-  { key: 'react', title: 'React', imgSrc: reactLogo },
-  { key: 'nodejs', title: 'Node.js', imgSrc: nodejsLogo },
-  { key: 'mongodb', title: 'MongoDB', imgSrc: mongodbLogo },
-  { key: 'express', title: 'Express', imgSrc: expressLogo },
-  { key: 'aws', title: 'AWS', imgSrc: awsLogo },
+  // Frontend Fundamentals
   { key: 'html5', title: 'HTML5', imgSrc: html5Logo },
   { key: 'css3', title: 'CSS3', imgSrc: css3Logo },
+  { key: 'javascript', title: 'JavaScript', imgSrc: javascriptLogo },
+  
+  // Frontend Frameworks
+  { key: 'react', title: 'React', imgSrc: reactLogo },
+  { key: 'reactnative', title: 'React Native', imgSrc: reactnativeLogo },
+  
+  // Backend Technologies
+  { key: 'nodejs', title: 'Node.js', imgSrc: nodejsLogo },
+  { key: 'express', title: 'Express', imgSrc: expressLogo },
+  { key: 'python', title: 'Python', imgSrc: pythonLogo },
+  
+  // Database
+  { key: 'mongodb', title: 'MongoDB', imgSrc: mongodbLogo },
+  
+  // Development Tools & Infrastructure
   { key: 'git', title: 'Git', imgSrc: gitLogo },
   { key: 'jest', title: 'Jest', imgSrc: jestLogo },
-  { key: 'blockchain', title: 'Blockchain', imgSrc: blockchainLogo },
-  { key: 'reactnative', title: 'React Native', imgSrc: reactnativeLogo },
-  { key: 'python', title: 'Python', imgSrc: pythonLogo },
-  { key: 'devops', title: 'DevOps', imgSrc: devopsLogo }
+  { key: 'aws', title: 'AWS', imgSrc: awsLogo },
+  { key: 'devops', title: 'DevOps', imgSrc: devopsLogo },
+  
+  // Specialized Technologies
+  { key: 'blockchain', title: 'Blockchain', imgSrc: blockchainLogo }
 ];
 
 const Skills = () => {
