@@ -141,7 +141,7 @@ const AboutMe = () => {
                 When not coding, I am driving Taiwan's mountain roads and exploring local cuisine, maintaining creativity and fresh perspectives.
               </p>
               <p className="tech-stack">
-                Tech Focus: <span className="highlight">Full-Stack Development (MERN)</span> • <span className="highlight">Algorithms</span> • <span className="highlight">System Architecture</span> & <span className="highlight">AWS</span> • <span className="highlight">Automated Testing</span> & <span className="highlight">CI/CD</span> • <span className="highlight">Real-time signal Processing</span> & <span className="highlight">IoT</span>
+                Tech Focus: <span className="highlight">Full-Stack Development (MERN)</span> • <span className="highlight">Algorithms</span> • <span className="highlight">System Architecture</span> & <span className="highlight">AWS</span> • <span className="highlight">Automated Testing</span> & <span className="highlight">CI/CD</span> • <span className="highlight">Real-time signal Processing</span>
               </p>
             </TextContainer>
           </Column>

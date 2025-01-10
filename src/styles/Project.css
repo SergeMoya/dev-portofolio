@@ -7,6 +7,8 @@
 .projects-content {
   max-width: 1400px;
   margin: 0 auto;
+  overflow: hidden;
+  padding: 0 20px;
 }
 
 .projects-container {
@@ -30,6 +32,7 @@
   border: 1px solid rgba(97, 218, 251, 0.1);
   text-decoration: none;
   color: var(--color-text);
+  margin: 0;
 }
 
 .project-card:hover {
@@ -307,4 +310,93 @@
   --color-heading: #ffffff;
   --color-text: #e2e8f0;
   --color-text-light: #94a3b8;
+}
+
+/* Add these styles at the appropriate location in your CSS file */
+
+.projects-swiper {
+  padding: 2rem 1.5rem 4rem !important;
+  position: relative;
+}
+
+/* Style Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+  background: var(--color-card-bg);
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50%;
+  border: 2px solid rgba(97, 218, 251, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+/* Enhanced hover effects */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(97, 218, 251, 0.15);
+  transform: scale(1.1);
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.3);
+}
+
+/* Add directional animations */
+.swiper-button-next:hover:after {
+  transform: translateX(3px);
+}
+
+.swiper-button-prev:hover:after {
+  transform: translateX(-3px);
+}
+
+/* Adjust button positions */
+.swiper-button-next {
+  right: -0px !important;
+}
+
+.swiper-button-prev {
+  left: -0px !important;
+}
+
+/* Add glow effect on focus */
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.3);
+}
+
+/* Style Swiper pagination */
+.swiper-pagination-bullet {
+  background: var(--color-primary) !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* Adjust project card styles */
+.project-card {
+  height: 100%;
+  margin: 0;
+}
+
+/* Update existing media queries */
+@media screen and (max-width: 768px) {
+  .projects-swiper {
+    padding: 1rem 0.5rem 3rem !important;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
 }
