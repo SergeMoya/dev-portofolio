@@ -7,7 +7,8 @@ import SectionHeader from './common/SectionHeader';
 import Image1 from '../images/Project1.png';
 import Image2 from '../images/Project2.png';
 import Image3 from '../images/Project3.png';
-import Image4 from '../images/Project4.png';
+import Image4 from '../images/Project4.png';   
+import Image5 from '../images/Project5.png';  
 import Project1PDF from '../pdf-project/Project1.pdf';
 import Project2PDF from '../pdf-project/Project2.pdf';
 import Project3PDF from '../pdf-project/Project3.pdf';
@@ -18,21 +19,19 @@ import 'swiper/css/pagination';
 const projects = [
   {
     title: "Pulse Oximeter Mobile Appication",
-    description: "Professional project - A sophisticated healthcare monitoring application that provides real-time blood oxygen (SpO2) and heart rate measurements through Bluetooth-enabled pulse oximeters. Features include live data visualization, historical data tracking, customizable alarms, multi-language support, and secure user authentication with AWS cloud integration for reliable data storage and analysis.",
+    description: "Professional project - A sophisticated healthcare monitoring application that provides real-time blood oxygen (SpO2) and heart rate measurements through Bluetooth-enabled pulse oximeters. Features include live data visualization, historical data tracking, multi-language support, and secure user authentication with AWS cloud integration for reliable data storage and analysis.",
     technologies: [
       "React Native",
       "Redux",
       "Node.js",
       "Express",
       "MongoDB",
-      "AWS Services",
-      "Bluetooth Low Energy (BLE)",
+      "Redux",
       "i18next",
       "JWT Authentication",
-      "React Navigation",
       "AWS Lambda",
       "AWS S3",
-      "AWS CloudWatch",
+      "AWS EC2",
       "MongoDB Atlas",
       "WebSocket"
     ],
@@ -82,23 +81,48 @@ const projects = [
     learnMore: Project3PDF
   },
   {
-      title: "Interactive Developer Portfolio",
-      description: "Personal project - A modern, interactive developer portfolio showcasing professional experience and projects. Features include 3D graphics, smooth animations, particle effects, responsive design, and an engaging user interface. The portfolio demonstrates expertise in modern web technologies and attention to user experience.",
-      technologies: [
-          "React.js",
-          "Three.js",
-          "React Three Fiber",
-          "Framer Motion",
-          "Styled Components",
-          "TSParticles",
-          "React Tilt",
-          "React Router",
-          "FontAwesome",
-          "Vercel Analytics"
-      ],
-      image: Image4,
-      link: window.location.origin,
-      learnMore: null
+    "title": "Machine Learning-Based Malaria Incidence Prediction System",
+    "description": "Research project - A machine learning system achieving 82.1% accuracy in predicting malaria incidence across African regions. Features include Random Forest ensemble with temporal cross-validation, automated data preprocessing pipeline, and epidemiological pattern analysis. Processes health data from 50 countries to optimize disease prevention strategies.",
+    "technologies": [
+      "Python 3.12",
+      "Scikit-learn",
+      "TensorFlow",
+      "PyTorch",
+      "Pandas",
+      "NumPy",
+      "XGBoost",
+      "SHAP",
+      "Flask",
+      "React 19",
+      "Material-UI 6",
+      "Chart.js 4",
+      "Matplotlib",
+      "Seaborn",
+      "Axios",
+      "Node.js"
+    ],
+    "image": Image4,
+    "link": "https://ai-malaria-frontend.onrender.com/",
+    "learnMore": null
+  },
+  {
+    title: "Interactive Developer Portfolio",
+    description: "Personal project - A modern, interactive developer portfolio showcasing professional experience and projects. Features include 3D graphics, smooth animations, particle effects, responsive design, and an engaging user interface. The portfolio demonstrates expertise in modern web technologies and attention to user experience.",
+    technologies: [
+        "React.js",
+        "Three.js",
+        "React Three Fiber",
+        "Framer Motion",
+        "Styled Components",
+        "TSParticles",
+        "React Tilt",
+        "React Router",
+        "FontAwesome",
+        "Vercel Analytics"
+    ],
+    image: Image5,
+    link: window.location.origin,
+    learnMore: null
   }
 ];
 
