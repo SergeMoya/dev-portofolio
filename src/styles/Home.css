@@ -71,17 +71,25 @@
     grid-template-columns: 1fr;
     padding: 20px;
     height: auto;
-    min-height: 100vh;
+    min-height: 0;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .content {
     grid-column: 1;
     width: 100%;
-    padding: 10vh 20px 5vh 20px;
+    padding: 5vh 20px;
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    text-align: center;
+  }
+
+  .Canvas, .scroller {
+    display: none;
   }
 
   .content h1 {

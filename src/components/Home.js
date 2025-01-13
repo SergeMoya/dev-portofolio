@@ -55,7 +55,17 @@ const Home = () => {
   const [text, setText] = useState('');
   const [showParagraph, setShowParagraph] = useState(false);
   const [showHint, setShowHint] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const fullText = "Hello, this is Serge\u00A0!";
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (text.length < fullText.length) {
@@ -111,26 +121,21 @@ const Home = () => {
           </SocialIcon>
         </SocialMediaContainer>
       </div>
-      <div className="Canvas">
-        <ComputerScene />
-      </div>
+      {isDesktop && <div className="Canvas"><ComputerScene /></div>}
+      {showHint && isDesktop && <div className="scroller"><MouseScroll onScroll={goToProjects} /></div>}
       <AnimatePresence>
-        {showHint && (
+        {showHint && isDesktop && (
           <motion.div 
-            className="interaction-hint"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            className="hint"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
             <span>Click and move your cursor around the image to interact with the 3D scene</span>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <div className="scroller">
-        <MouseScroll onScroll={goToProjects} />
-      </div>
     </div>
   );
 };
