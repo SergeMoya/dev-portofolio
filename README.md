@@ -1,75 +1,86 @@
-HEAD
-# dev-portofolio
-Personal portofolio
+# Developer Portfolio
 
-# Getting Started with Create React App
+A modern, interactive portfolio website built with React and Three.js, featuring 3D animations, particle effects, and responsive design.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+- Interactive 3D elements powered by Three.js
+- Smooth animations using Framer Motion
+- Responsive design for all devices
+- Dynamic particle effects
+- Timeline component for experience showcase
+- Modern UI with styled-components
+- Custom animations and transitions
+- Performance optimized with React best practices
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- React 18
+- Three.js
+- Framer Motion
+- Styled Components
+- React Router DOM
+- TsParticles
+- React Three Fiber & Drei
+- FontAwesome Icons
+- Vercel Analytics
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/devportfolio.git
+   ```
 
-### `npm test`
+2. Install dependencies:
+   ```bash
+   cd devportfolio
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-### `npm run build`
+The application will open in your default browser at `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Building for Production
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To create a production build:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run build
+```
 
-### `npm run eject`
+This will generate a `build` folder with optimized production files.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Configuration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project uses `craco` (Create React App Configuration Override) for additional configuration options. See `craco.config.js` for details.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Responsive Design
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The portfolio is fully responsive and optimized for:
+- Desktop devices
+- Tablets
+- Mobile phones
 
-## Learn More
+## Performance
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Optimized asset loading
+- Efficient component rendering
+- Lazy loading for better initial load time
+- Analytics integration for monitoring
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+This project is licensed under the terms of the license included in the repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> recovery-branch
+Built with ❤️ using React and modern web technologies.
